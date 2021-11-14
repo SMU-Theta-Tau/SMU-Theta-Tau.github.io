@@ -1,0 +1,390 @@
+---
+---
+@charset "utf-8";
+
+/* path to glyphicons */
+$icon-font-path: "/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600');
+
+// ------------------------------------------------------------------------------
+//                                    Colors
+// ------------------------------------------------------------------------------
+
+$text1: #d79c00;
+$text2: #c8ceff;
+$bg1: #660000;
+$bg2: #303030;
+
+$gradient1: #F72585;
+$gradient2: #B5179E;
+$gradient3: #7209B7;
+$gradient4: #560BAD;
+$gradient5: #480CA8;
+$gradient6: #3A0CA3;
+$gradient7: #3F37C9;
+$gradient8: #4361EE;
+$gradient9: #3894FF;
+$gradient10: #4895EF;
+$gradient11: #4CC9F0;
+
+$twitch: #ff9df2;
+$discord: #a79dff;
+
+// ------------------------------------------------------------------------------
+//                                    General
+// ------------------------------------------------------------------------------
+
+h1, h2, p, a {
+    margin: 0;
+    font-family: Poppins;
+    color: $text1;
+}
+
+h1 {
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+body {
+    margin: 0 !important;
+}
+
+section {
+    padding: 10vh 20vw 20vh 20vw;
+}
+
+.btn {
+    background-color: #fff;
+    color: $gradient7;
+    border-radius: 2vw;
+    padding: 5vw;
+  }
+
+.btn:hover {
+    color: $gradient1;
+}
+
+.primary-color {
+    color: $text1;
+}
+
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 5vh;
+    }
+}
+
+// ------------------------------------------------------------------------------
+//                                   Main.html
+// ------------------------------------------------------------------------------
+
+#particles-js {
+    z-index: 1;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    // Navbar
+    .navbar {
+        z-index: 2;
+    }
+
+    // Image placement
+    .main-img {
+        position: absolute;
+        width: 100vw;
+        z-index: 1;
+        filter: opacity(50%);
+    }
+
+    .thetatau-img {
+        display: block;
+        margin-top: 5vh;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+        filter: opacity(100%);
+    }
+
+    .hill1 {
+        top: 30vh;
+    }
+
+    .hill2 {
+        top: 50vh;
+    }
+
+    .hill3 {
+        top: 70vh;
+    }
+    
+    h1 {
+        padding-bottom: 0;
+    }
+
+    p, li {
+        color: $bg2;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .thetatau-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            z-index: 1;
+            filter: opacity(100%);
+        }
+    }
+
+    button {
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+.main-content {
+    position: absolute;
+    top: 8vh;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#navbar {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+      
+    li {
+      float: left;
+    }
+      
+    li a {
+      font-size: 1.2rem;
+      display: block;
+      color: #111;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+      
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+      background-color: #FFF;
+    }
+
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
+}
+
+// ------------------------------------------------------------------------------
+//                                 Slideshow.html
+// ------------------------------------------------------------------------------
+
+#slideshow {
+
+    background: $bg1;
+
+    .slideshow-container {
+      max-width: 750px;
+      max-height: 400px;
+      position: relative;
+      margin: auto;
+    }
+  
+    .slides {
+      display: none;
+    }
+  
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 70%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 36px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+  
+    .prev {
+      left: 0;
+      border-radius: 0 6px 6px 0;
+    }
+  
+    .next {
+      right: 0;
+      border-radius: 6px 0 0 6px;
+    }
+  
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+      opacity: 1;
+    }
+  
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+  
+    @keyframes fade {
+        0% {top: 100%}
+        4% {top: 0%}
+        33.33% {top: 0%}
+        37.33% {top: -100%}
+        100% {top: -100%}
+    }
+  }
+
+// ------------------------------------------------------------------------------
+//                                  AboutUs.html
+// ------------------------------------------------------------------------------
+
+#about-us {
+    background: $bg1;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 5;
+    padding-bottom: 2vh;
+    z-index: 2;
+
+    img {
+        position: absolute;
+        width: 100vw;
+        z-index: 1;
+    }
+}
+
+.aboutus-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+// ------------------------------------------------------------------------------
+//                                 Calendar.html
+// ------------------------------------------------------------------------------
+
+#calendar {
+    background: $bg1;
+    position: relative;
+    z-index: 2;
+
+    img {
+        position: absolute;
+        width: 100vw;
+        z-index: 1;
+    }
+}
+
+.aboutus-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+// ------------------------------------------------------------------------------
+//                                 Resources.html
+// ------------------------------------------------------------------------------
+
+#resources {
+    background: $bg1;
+    position: relative;
+    z-index: 2;
+
+    img {
+        position: absolute;
+        width: 100vw;
+        z-index: 1;
+    }
+
+    a {
+        font-size: 1.2rem;
+    }
+}
+
+.aboutus-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+// ------------------------------------------------------------------------------
+//                                  Footer.html
+// ------------------------------------------------------------------------------
+
+#footer {
+    background: $bg2;
+    height: 10vh;
+    position: relative;
+    z-index: 2;
+    
+    img {
+        width: 3rem;
+        padding: 0 0.5rem;
+    }
+
+    img:hover {
+        filter: brightness(85%);
+        transition: 0.2s
+    }
+
+    a {
+        color: $text1;
+        font-size: 2rem;
+    }
+
+    a:hover {
+        filter: brightness(85%);
+        transition: 0.2s;
+    }
+
+    .footer-content {
+        background: $bg2;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 30%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .footer-content {
+            padding-bottom: 3vh;
+        }
+    }
+}
+
+// ------------------------------------------------------------------------------
+//                                    Imports
+// ------------------------------------------------------------------------------
