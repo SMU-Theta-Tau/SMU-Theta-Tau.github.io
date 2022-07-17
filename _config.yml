@@ -20,7 +20,7 @@
 
 title: SMU Theta Tau
 email: smuthetatau@gmail.com
-rush_email: issmith@mail.smu.edu
+rush_email: awbrandt@mail.smu.edu
 description: >- # this means to ignore newlines until "baseurl:"
   The premier Professional Engineering Fraternity at SMU.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -34,7 +34,7 @@ twitter_url: \#
 instagram_url:  https://www.instagram.com/thetatau_smu/?hl=en
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 exclude:

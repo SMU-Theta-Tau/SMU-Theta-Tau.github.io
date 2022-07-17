@@ -1,11 +1,12 @@
 ---
 layout: home
 slideshow-filenames: [
-  "ANATC2021", "DallasRamps2020", "Philia2021", "Regionals2020",
+  "1", "2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"
 ]
 ---
 
 {% include main.html %}
+{% include header.html %}
 {% include aboutus.html %}
 {% include slideshow.html %}
 {% include calendar.html %}
