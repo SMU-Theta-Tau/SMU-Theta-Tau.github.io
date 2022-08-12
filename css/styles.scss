@@ -170,6 +170,18 @@ li {
         padding: 0.5rem 1rem;
     }
 
+    #rush-form {
+        width: 640px;
+        height: 1382px;
+    }
+    
+    @media only screen and (max-width: 600px){
+        #rush-form {
+            width: 400px;
+            height: 1382px;
+        }
+    }
+
     iframe {
         margin-bottom: 10vh;
     }
