@@ -8,7 +8,7 @@ slideshow-filenames: [
 {% include main.html %}
 {% include header.html %}
 {% include aboutus.html %}
-{% include slideshow.html %}
+{% include recruitment.html %}
 {% include calendar.html %}
 {% include resources.html %}
 {% include footer.html %}

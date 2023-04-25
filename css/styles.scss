@@ -5,7 +5,7 @@
 /* path to glyphicons */
 $icon-font-path: "/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 // ------------------------------------------------------------------------------
 //                                    Colors
@@ -32,6 +32,26 @@ $twitch: #ff9df2;
 $discord: #a79dff;
 
 // ------------------------------------------------------------------------------
+//                                   Fonts
+// ------------------------------------------------------------------------------
+
+@font-face {
+    font-family: 'Arcon';
+    src: url('../fonts/Arcon-Regular.otf');
+}
+
+@font-face {
+    font-family: 'LiberationMono';
+    src: url('../fonts/LiberationMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'LiberationSerif';
+    src: url('../fonts/LiberationSerif-Regular.ttf');
+}
+
+
+// ------------------------------------------------------------------------------
 //                                    General
 // ------------------------------------------------------------------------------
 
@@ -44,19 +64,29 @@ html, body {
 h1, h2, p, a {
     margin: 0;
     color: $thetatau-offwhite;
+    font-family: 'Arcon';
 }
 
 h1 {
-    padding-bottom: 3vh;
-    padding-top: 3vh;
+
+    font-family: 'LiberationMono' !important;
+    font-size: 70px !important;
+}
+
+h2 {
+    font-size: 50px !important;
+}
+
+h2, h3 {
+    font-family: 'LiberationSerif' !important;
 }
 
 p {
-    font-size: 1.3rem;
+    font-size: 24px;
 }
 
 body {
-    font-family: 'Arial' !important;
+    /*font-family: 'Arial' !important;*/
     margin: 0 !important;
 }
 
@@ -83,7 +113,7 @@ li {
     list-style: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     p {
         font-size: 1rem;
     }
@@ -105,21 +135,40 @@ li {
 }
 
 #main {
-    width: 100vw;
-    // height: 100vh;
+    width: 100%;
+    height: 700px;
     position: relative;
+    padding-bottom: 2em;
+    padding-top: 1em;
 
     // Navbar
     .navbar {
+        z-index: 10;
+        position: fixed;
+        background-color: white;
+        color: rgb(145, 145, 145);
+        width: 100%;
+        height: 4em;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: -1em;
+        border-bottom: 0.1rem solid rgb(145, 145, 145);
+        
+    }
+
+    .recruitment-button {
         z-index: 2;
+    }
+
+    .main-content {
+        padding-left: 5em;
+        margin-top: 10%;
     }
 
     // Image placement
     .main-img {
-        text-align: center;
         position: absolute;
-        // width: 100vw;
-        height: 135vh;
+        width: 100vw;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -148,39 +197,32 @@ li {
     
     h1 {
         padding-bottom: 0;
+        margin-left: -5px;
     }
 
     p, li {
         color: $bg2;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
         .thetatau-img {
             display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
+            text-align: center;
+
             z-index: 1;
             filter: opacity(100%);
+        }
+        .main-img {
+            height: 100vh;
         }
     }
 
     button {
         border-radius: 1rem;
+        border: 0;
         padding: 0.5rem 1rem;
-    }
-
-    #rush-div {
-        
-    }
-
-    #rush-form {
-        /*display: flex;*/
-        /*text-align: center;
-        /*width: 640px;*/
-        width: 84vw;
-        height: 1382px;
-
+        background-color: #660000;
+        color: $thetatau-gold;
     }
 
     iframe {
@@ -198,14 +240,26 @@ li {
 
 #navbar {
     
-    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
     
+    .nav-logo {
+        margin-right: auto;
+        padding: 14px 16px;
+    }
       
-    li {
-      float: left;
+    .nav-item {
+        list-style-type: none;
+        list-style: none;
+        display: inline-block;
+        padding: 14px 16px;
+        padding-top: 0;
+        padding-bottom: 0;
     }
       
     li a {
@@ -213,16 +267,15 @@ li {
       display: block;
       color: #111;
       text-align: center;
-      padding: 14px 16px;
       text-decoration: none;
     }
       
     /* Change the link color to #111 (black) on hover */
     li a:hover {
-      background-color: #FFF;
+      background-color: #cfcfcf;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
         display: none;
     }
 }
@@ -265,7 +318,7 @@ li {
         top: 30%;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
         .header-content {
             padding-bottom: 3vh;
         }
@@ -347,12 +400,43 @@ li {
 // ------------------------------------------------------------------------------
 
 #about-us {
-    background: $thetatau-darkred;
+    background-image: url("../img/aboutus-bg.png");
+    background-color: #5C0107;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     margin-top: 0;
     margin-bottom: 5;
+    padding-top: 0;
     padding-bottom: 2vh;
     z-index: 2;
+    padding-left: 2vw;
+    h1 {
+        padding-top: 1em;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        @media only screen and (max-width: 768px){
+            width: 100%;
+            margin-left: -2vw;
+            padding-bottom: 2em;
+        }
+    }
+    .row{
+        margin-left: -2vw;
+        width: 100vw;
+        padding-bottom: 3em;
+    }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
 
     // img {
     //     position: absolute;
@@ -368,13 +452,66 @@ li {
 }
 
 // ------------------------------------------------------------------------------
+//                                  Recruitment.html
+// ------------------------------------------------------------------------------
+
+#recruitment {
+    background: $thetatau-darkred;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 5;
+    padding-top: 0;
+    padding-bottom: 2vh;
+    z-index: 2;
+    padding-left: 0em;
+    h1 {
+        padding-top: 1em;
+    }
+    .primary-color {
+        padding-left: 2vw;
+    }
+
+    #rush-div {
+        padding-left: 2vw;
+        width: 25vw;
+        @media only screen and (max-width: 768px){
+            width: 100vw;
+        }
+    }
+
+    #rush-form {
+        /*display: flex;*/
+        /*text-align: center;
+        /*width: 640px;*/
+        width: 100%;
+        height: 1382px;
+        padding-left: 0;
+        
+    }
+
+    // img {
+    //     position: absolute;
+    //     width: 100vw;
+    //     z-index: 1;
+    // }
+}
+
+
+// ------------------------------------------------------------------------------
 //                                 Calendar.html
 // ------------------------------------------------------------------------------
 
 #calendar {
-    background: $thetatau-darkred;
+    background-color: white;
+    color: #660000;
     position: relative;
     z-index: 2;
+    padding-left: 2vw;
+    padding-top: 0;
+
+    h1{
+        padding-top: 1em;
+    }
 
     img {
         position: absolute;
@@ -398,9 +535,11 @@ li {
 // ------------------------------------------------------------------------------
 
 #resources {
-    background: $thetatau-darkred;
+    background-image: url("../img/photos/12bg.png");
+    background-position: 50% 45%; 
     position: relative;
     z-index: 2;
+    padding-left: 2vw;
 
     img {
         position: absolute;
@@ -457,7 +596,7 @@ li {
         top: 30%;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
         .footer-content {
             padding-bottom: 3vh;
         }
