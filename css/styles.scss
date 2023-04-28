@@ -239,7 +239,6 @@ li {
 }
 
 #navbar {
-    
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -252,14 +251,37 @@ li {
         margin-right: auto;
         padding: 14px 16px;
     }
-      
-    .nav-item {
+
+    #hamburger {
+    display: none;
+    @media only screen and (max-width: 768px){
         list-style-type: none;
         list-style: none;
         display: inline-block;
         padding: 14px 16px;
         padding-top: 0;
         padding-bottom: 0;
+    }
+}
+    #nav-items{
+
+        .nav-item {
+            list-style-type: none;
+            list-style: none;
+            display: inline-block;
+            padding: 14px 16px;
+            padding-top: 0;
+            padding-bottom: 0;
+            @media only screen and (max-width: 768px){
+                display: block;
+                overflow: visible;
+            }
+        }
+        @media only screen and (max-width: 768px){
+            width: 100%;
+            display: none;
+            overflow: visible;
+        }
     }
       
     li a {
@@ -275,9 +297,9 @@ li {
       background-color: #cfcfcf;
     }
 
-    @media only screen and (max-width: 768px) {
+    /*@media only screen and (max-width: 768px) {
         display: none;
-    }
+    }*/
 }
 
 // ------------------------------------------------------------------------------
@@ -429,6 +451,15 @@ li {
         margin-left: -2vw;
         width: 100vw;
         padding-bottom: 3em;
+    }
+    .value-desc {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;
+        @media only screen and (max-width: 768px){
+            font-size: 24px;
+        }
     }
       
       /* Clear floats after the columns */
