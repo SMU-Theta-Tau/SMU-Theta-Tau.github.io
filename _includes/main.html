@@ -12,6 +12,16 @@
             }
         }
     } 
+    function newLink() {
+        var x = document.getElementById("nav-items");
+        var mediaQuery = window.matchMedia('(max-width: 768px)');
+        if (mediaQuery.matches) {
+            console.log("hallo2");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            }
+        }
+    }
 </script>
 
 <header id="main">
@@ -21,19 +31,18 @@
     <nav class="navbar navbar-expand-lg container-fluid">
 
         <ul id="navbar">
-            <li class="nav-logo"><a href="/">ΘΤ | ΤΒ</a></li>
-            <li id="hamburger"><a href="javascript:void(0);" onclick="hamMenu()">
-                    <img src="../img/hamburger.png" width="40"/>
-                </a></li>
-                <br/>
+            <li id="nav-logo"><a href="/">ΘΤ | ΤΒ</a></li>
             <div id="nav-items">
                 <li class="nav-item"><a href="/">Home</a></li>
-                <li class="nav-item"><a href="#about-us-anchor">About Us</a></li>
-                <li class="nav-item"><a href="#recruitment-anchor">Recruitment</a></li>
-                <li class="nav-item"><a href="#calendar-anchor">Calendar</a></li>
-                <li class="nav-item"><a href="#resources-anchor">Resources</a></li>
-                <li class="nav-item"><a href="mailto:{{site.email}}">Contact Us</a></li>
+                <li class="nav-item"><a href="#about-us-anchor" onclick="newLink()">About Us</a></li>
+                <li class="nav-item"><a href="#recruitment-anchor" onclick="newLink()">Recruitment</a></li>
+                <li class="nav-item"><a href="#calendar-anchor" onclick="newLink()">Calendar</a></li>
+                <li class="nav-item"><a href="#resources-anchor" onclick="newLink()">Resources</a></li>
+                <li class="nav-item"><a href="mailto:{{site.email}}" onclick="newLink()">Contact Us</a></li>
             </div>
+            <li id="hamburger"><a href="javascript:void(0);" onclick="hamMenu()">
+                <img src="../img/hamburger.png" width="40"/>
+            </a></li>
         </ul>
     </nav>
 
