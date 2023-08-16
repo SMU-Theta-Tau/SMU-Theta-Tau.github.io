@@ -153,7 +153,99 @@ li {
         padding-bottom: 0;
         margin-top: -1em;
         border-bottom: 0.1rem solid rgb(145, 145, 145);
-        overflow: visible;
+        #nav-logo {
+            margin-right: auto;
+            padding: 14px;
+            color: black;
+            @media only screen and (max-width: 768px) {
+                padding: 0px;
+            }
+        }
+        #navbar {
+            margin: 0;
+            padding: 0;
+            overflow: visible;
+            display: flex;
+            gap: 2rem;
+            a:hover {
+                text-decoration: none;
+            }
+            
+            #hamburger {
+            display: none;
+            @media only screen and (max-width: 768px){
+                list-style-type: none;
+                list-style: none;
+                display: inline-block;
+                padding: 14px 16px;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            }
+            
+            /* responsive */
+            /*nav.active ul.nav-items {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }*/
+            #nav-items{
+                margin-top: 1%;
+                .nav-item {
+                    list-style-type: none;
+                    list-style: none;
+                    display: inline-block;
+                    padding: 14px 16px;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    @media only screen and (max-width: 768px){
+                        display: block;
+                        background-color: #ecececff;
+                        width: 100%;
+                        padding-top: 0.1em;
+                        padding-bottom: 0.1em;
+                        font-size: 10em;
+                    }
+                }
+                .nav-item a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                    
+                }
+                @media only screen and (max-width: 768px){
+                    display: none;
+                    float: none;
+                    background-color: #ecececff;
+                    flex-direction: column;
+                    width: 100%;
+                    align-items: center;
+                    margin-top: 50%;
+                    .nav-item {
+                        padding-top: 0;
+                        margin-top: 0;
+                    }
+                }
+            }
+              
+            li a {
+              font-size: 1.2rem;
+              display: block;
+              color: #111;
+              text-align: center;
+              text-decoration: none;
+            }
+              
+            /* Change the link color to #111 (black) on hover */
+            li a:hover {
+              background-color: #cfcfcf;
+            }
+        
+            /*@media only screen and (max-width: 768px) {
+                display: none;
+            }*/
+        }
     }
 
     .recruitment-button {
@@ -240,86 +332,6 @@ li {
     z-index: 2;
     width: 100%;
     height: 100%;
-}
-
-#navbar {
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100%;
-    
-    
-    #nav-logo {
-        margin-right: auto;
-        padding: 14px 16px;
-        display: absolute;
-        
-    }
-
-    #hamburger {
-    display: none;
-    @media only screen and (max-width: 768px){
-        list-style-type: none;
-        list-style: none;
-        display: inline-block;
-        padding: 14px 16px;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
-    #nav-items{
-
-        .nav-item {
-            list-style-type: none;
-            list-style: none;
-            display: inline-block;
-            padding: 14px 16px;
-            padding-top: 0;
-            padding-bottom: 0;
-            @media only screen and (max-width: 768px){
-                display: block;
-                background-color: #ecececff;
-                width: 100%;
-                padding-top: 0.1em;
-                padding-bottom: 0.1em;
-                font-size: 10em;
-            }
-        }
-        .nav-item a {
-            float: none;
-            display: block;
-            text-align: left;
-            
-        }
-        @media only screen and (max-width: 768px){
-            width: 100%;
-            display: none;
-            float: none;
-            background-color: #ecececff;
-            margin-top: 26.5em;
-            margin-right: -30%;
-        }
-    }
-      
-    li a {
-      font-size: 1.2rem;
-      display: block;
-      color: #111;
-      text-align: center;
-      text-decoration: none;
-    }
-      
-    /* Change the link color to #111 (black) on hover */
-    li a:hover {
-      background-color: #cfcfcf;
-    }
-
-    /*@media only screen and (max-width: 768px) {
-        display: none;
-    }*/
 }
 
 // ------------------------------------------------------------------------------
