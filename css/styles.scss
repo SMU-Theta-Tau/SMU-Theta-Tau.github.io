@@ -11,7 +11,7 @@ $icon-font-path: "/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 //                                    Colors
 // ------------------------------------------------------------------------------
 
-$thetatau-gold: #d79c00;    // Theta Tau Gold
+$thetatau-gold: rgba(215, 158, 0, 0.78);    // Theta Tau Gold
 $thetatau-offwhite: #edeab5;    // Theta Tau Off-White
 $thetatau-darkred: #660000;      // Theta Tau Dark Red
 $bg2: #303030;
@@ -56,7 +56,7 @@ p {
 }
 
 body {
-    font-family: 'Arial' !important;
+    font-family: 'proxima-nova', sans-serif !important;
     margin: 0 !important;
 }
 
@@ -112,6 +112,10 @@ li {
     // Navbar
     .navbar {
         z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        padding: 0rem 0rem;
     }
 
     // Image placement
@@ -264,7 +268,6 @@ li {
     }
 
     .header-content {
-        background: $thetatau-gold;
         position: absolute;
         width: 100%;
         height: auto;
