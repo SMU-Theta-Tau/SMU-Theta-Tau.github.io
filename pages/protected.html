@@ -27,6 +27,11 @@
             margin-top: 10px;
             cursor: pointer;
         }
+        label {
+            margin-top: 10px;
+            display: block;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -34,15 +39,30 @@
         <h1>Enter Password</h1>
         <input type="password" id="password" placeholder="Password">
         <br>
+        <label>
+            <input type="checkbox" onclick="togglePassword()"> Show Password
+        </label>
+        <br>
         <button onclick="checkPassword()">Submit</button>
     </div>
 
     <script>
+        // Function to toggle password visibility
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+
+        // Function to check the password and redirect
         function checkPassword() {
             var password = document.getElementById("password").value;
-            var correctPassword = "GuntharIsTheBest2024"; // Set your password here
+            var correctPassword = "your_password_here"; // Set your password here
             if (password === correctPassword) {
-                window.location.href = "https://linktr.ee/OT_TauBeta"; // Set your redirection link here
+                window.location.href = "your_link_here"; // Set your redirection link here
             } else {
                 alert("Incorrect password. Please try again.");
             }
