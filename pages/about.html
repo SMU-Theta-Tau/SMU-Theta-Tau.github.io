@@ -1,0 +1,48 @@
+<header id="main">
+    <img class="main-img" src="img/contact-us-header.png">
+    
+    <header id="header">
+        <div class="text-center container-fluid header-content">
+            <nav class="navbar navbar-expand-lg container-fluid">
+                <ul id="navbar">
+                    <li class="nav-item"><img src="img/logo.png"></li>
+                    <li class="nav-item"><a href="#home-anchor">Home</a></li>
+                    <li class="nav-item"><a href="#services-anchor">Services</a></li>
+                    <li class="nav-item"><a href="#about-anchor">About Us</a></li>
+                    <li class="nav-item"><a href="pages/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-fluid text-center main-content title-header">
+        <div style="
+            background: #ffffff9c;
+            width: fit-content;
+            padding: 10px;
+        ">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you. Fill out the form below, and we’ll get back to you as soon as possible.</p>
+        </div>
+    </div>
+</header>
+
+<section id="contact-form" class="container-fluid text-center">
+    <div class="contact-form-container">
+        <form action="/submit" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-lg" id="submitBtn">Send Message</button>
+        </form>
+    </div>
+</section>
