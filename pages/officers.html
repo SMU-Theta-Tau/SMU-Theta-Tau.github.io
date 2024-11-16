@@ -6,49 +6,7 @@
     <title>Officers</title>
     <link rel="stylesheet" href="../css/styles.css">
     <style>
-        .officers-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);  /* Creates three equal-width columns */
-            gap: 2rem;                              /* Adds spacing between the cards */
-            padding: 2rem;
-            justify-items: center;                  /* Centers items horizontally */
-        }
-
-        .officer-card {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;                            /* Ensures the card takes full width within its grid item */
-        }
-
-        .leader-img {
-            width: 150px;            /* Set the width and height to make the image square */
-            height: 150px;
-            object-fit: cover;       /* Ensures the image covers the area without distorting */
-            border-radius: 8px;      /* Optional: rounded corners for image */
-            margin-bottom: 1rem;     /* Add some space between the image and text */
-            display: block;          /* Makes the image a block to center it */
-            margin-left: auto;       /* Centers the image horizontally */
-            margin-right: auto;
-        }
-
-        h3, p {
-            margin: 0.5rem 0;         /* Add spacing around the text */
-        }
-
-        @media only screen and (max-width: 768px) {
-            .officers-grid {
-                grid-template-columns: repeat(2, 1fr); /* On smaller screens (like tablets), use 2 columns */
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            .officers-grid {
-                grid-template-columns: 1fr; /* On very small screens (like phones), use 1 column */
-            }
-        }
+        
 
 
     </style>
@@ -74,7 +32,7 @@
         </div>
     </header>
 
-    <section id="main" class="container-fluid">
+    <section id="officers" class="container-fluid">
         <h2 class="primary-color">Executive Board</h2>
         <!-- Executive Board -->
         <div class="officers-grid">
