@@ -11,6 +11,7 @@
             grid-template-columns: repeat(3, 1fr);  /* Creates three equal-width columns */
             gap: 2rem;                              /* Adds spacing between the cards */
             padding: 2rem;
+            justify-items: center;                  /* Centers items horizontally */
         }
 
         .officer-card {
@@ -19,6 +20,7 @@
             border-radius: 10px;
             padding: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;                            /* Ensures the card takes full width within its grid item */
         }
 
         .leader-img {
@@ -38,15 +40,16 @@
 
         @media only screen and (max-width: 768px) {
             .officers-grid {
-                grid-template-columns: repeat(2, 1fr); /* On smaller screens, use 2 columns */
+                grid-template-columns: repeat(2, 1fr); /* On smaller screens (like tablets), use 2 columns */
             }
         }
 
         @media only screen and (max-width: 480px) {
             .officers-grid {
-                grid-template-columns: 1fr; /* On very small screens, use 1 column */
+                grid-template-columns: 1fr; /* On very small screens (like phones), use 1 column */
             }
         }
+
 
     </style>
 </head>
