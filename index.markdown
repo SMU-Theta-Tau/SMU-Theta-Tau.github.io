@@ -1,7 +1,7 @@
 ---
 layout: home
 slideshow-filenames: [
-  "1", "2","3","4","5","6","7","8"
+  "photo1", "photo2","photo3","photo4","photo5","photo6","photo7","photo8", "photo9", "photo10"
 ]
 ---
 
