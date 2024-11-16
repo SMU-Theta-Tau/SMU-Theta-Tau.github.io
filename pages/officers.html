@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theta Tau - Leadership</title>
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Link to your CSS file -->
+    <title>Officers</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Inline CSS for demonstration; move to styles.css in production */
+
+        /* Grid container */
+        .officers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        /* Officer card */
+        .officer-card {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .officer-card img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid #660000; /* Theta Tau dark red */
+        }
+
+        .officer-card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .officer-card p {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            /* Adjust card content for smaller screens */
+            .officer-card img {
+                max-width: 120px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header id="header">
@@ -21,55 +66,55 @@
                 <img src="images/regent.jpg" alt="Caroline Corbin Picture" class="leader-img">
                 <h3>Regent</h3>
                 <p>Name: Caroline Corbin</p>
-                <p>Email: cvcorbin@smu.edu</p>
+                <p><a href="mailto:cvcorbin@smu.edu">cvcorbin@smu.edu</a></p>
             </div>
             <div class="leader-card">
                 <img src="images/vice-regent.jpg" alt="Jackson Reed Picture" class="leader-img">
                 <h3>Vice Regent</h3>
                 <p>Name: Jackson Reed</p>
-                <p>Email: jsreed@smu.edu</p>
+                <p><a href="mailto:jsreed@smu.edu">jsreed@smu.edu</a></p>
             </div>
             <div class="leader-card">
                 <img src="images/treasurer.jpg" alt="Micah Pressler Picture" class="leader-img">
                 <h3>Treasurer</h3>
                 <p>Name: Micah Pressler</p>
-                <p>Email: mpressler@smu.edu</p>
+                <p><a href="mpressler@smu.edu">mpressler@smu.edu</a></p>
             </div>
             <div class="leader-card">
                 <img src="images/scribe.jpg" alt="Isabella Iannarelli Picture" class="leader-img">
                 <h3>Scribe</h3>
                 <p>Name: Isabella Iannarelli</p>
-                <p>Email: iiannarelli@smu.edu</p>
+                <p><a href="iiannarelli@smu.edu">iiannarelli@smu.edu</a></p>
             </div>
             <div class="leader-card">
                 <img src="images/corresponding-secretary.jpg" alt="Emma Stammeyer Picture" class="leader-img">
                 <h3>Corresponding Secretary</h3>
                 <p>Name: Emma Stammeyer</p>
-                <p>Email: estammeyer@smu.edu</p>
+                <p><a href="estammeyer@smu.edu">estammeyer@smu.edu</a></p>
             </div>
             <div class="leader-card">
                 <img src="images/member-relations.jpg" alt="Clark Godinez Picture" class="leader-img">
                 <h3>Member Relations</h3>
                 <p>Name: Clark Godinez</p>
-                <p>Email: cgodinez@smu.edu</p>
+                <p><a href="cgodinez@smu.edu">cgodinez@smu.edu</a></p>
             </div>
             <div class="leader-card">
                 <img src="images/marshal.jpg" alt="Justin Vincent Picture" class="leader-img">
                 <h3>Marshal</h3>
                 <p>Name: Justin Vincent</p>
-                <p>Email: justinv@smu.edu</p>
+                <p><a href="justinv@smu.edu">justinv@smu.edu</a></p>
             </div>
             <div class="leader-card">
                 <img src="images/inner-guard.jpg" alt="Austin Carnline Picture" class="leader-img">
                 <h3>Inner Guard</h3>
                 <p>Name: Austin Carnline</p>
-                <p>Email: lcarnline@smu.edu</p>
+                <p><a href="lcarnline@smu.edu">lcarnline@smu.edu</a></p>
             </div>
             <div class="leader-card">
                 <img src="images/outer-guard.jpg" alt="Case Hoogland Picture" class="leader-img">
                 <h3>Outer Guard</h3>
                 <p>Name: Case Hoogland</p>
-                <p>Email: choogland@smu.edu</p>
+                <p><a href="choogland@smu.edu">choogland@smu.edu</a></p>
             </div>
         </div>
 
