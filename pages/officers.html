@@ -6,17 +6,13 @@
     <title>Officers</title>
     <link rel="stylesheet" href="../css/styles.css">
     <style>
-        /* Inline CSS for demonstration; move to styles.css in production */
-
-        /* Grid container */
         .officers-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);  /* Creates three equal-width columns */
+            gap: 2rem;                              /* Adds spacing between the cards */
             padding: 2rem;
         }
 
-        /* Officer card */
         .officer-card {
             text-align: center;
             background-color: rgba(255, 255, 255, 0.1);
@@ -25,41 +21,33 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .officer-card img {
-            width: 100%;
-            max-width: 150px;
-            height: auto;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            border: 3px solid #660000; /* Theta Tau dark red */
-        }
-
-        .officer-card h3 {
-            margin: 0.5rem 0;
-            font-size: 1.2rem;
-        }
-
-        .officer-card p {
-            font-size: 0.9rem;
-        }
-
         .leader-img {
-            width: 100%;               /* Make the image responsive */
-            max-width: 150px;          /* Set a maximum width for the image */
-            height: auto;              /* Maintain aspect ratio */
-            border-radius: 50%;        /* Make the image circular */
-            border: 3px solid #660000; /* Add a border matching Theta Tau Dark Red */
-            margin: 0 auto 1rem;       /* Center the image horizontally and add bottom spacing */
-            display: block;            /* Ensure it's treated as a block for centering */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a soft shadow for a polished look */
+            width: 150px;            /* Set the width and height to make the image square */
+            height: 150px;
+            object-fit: cover;       /* Ensures the image covers the area without distorting */
+            border-radius: 8px;      /* Optional: rounded corners for image */
+            margin-bottom: 1rem;     /* Add some space between the image and text */
+            display: block;          /* Makes the image a block to center it */
+            margin-left: auto;       /* Centers the image horizontally */
+            margin-right: auto;
         }
 
-        @media (max-width: 768px) {
-            /* Adjust card content for smaller screens */
-            .officer-card img {
-                max-width: 120px;
+        h3, p {
+            margin: 0.5rem 0;         /* Add spacing around the text */
+        }
+
+        @media only screen and (max-width: 768px) {
+            .officers-grid {
+                grid-template-columns: repeat(2, 1fr); /* On smaller screens, use 2 columns */
             }
         }
+
+        @media only screen and (max-width: 480px) {
+            .officers-grid {
+                grid-template-columns: 1fr; /* On very small screens, use 1 column */
+            }
+        }
+
     </style>
 </head>
 <body>
