@@ -41,9 +41,14 @@ html, body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, p, a {
+h1, h2, p, a {
     margin: 5px;
     color: $thetatau-offwhite;
+}
+
+h3 {
+    margin: 5px;
+    color: $thetatau-gold;
 }
 
 h1 {
