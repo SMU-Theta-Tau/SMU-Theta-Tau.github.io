@@ -493,7 +493,7 @@ li {
     background: $thetatau-darkred;
     position: relative;
     z-index: 2;
-
+    
     .officers-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);  /* Creates three equal-width columns */
