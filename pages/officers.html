@@ -1,210 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Officers</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Theta Tau — Officers</title>
 
-
-    </style>
+  <!-- Optional: nicer font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header id="header">
-        <div class="text-center container-fluid header-content">
-            <nav class="navbar navbar-expand-lg container-fluid">
-                <ul id="navbar">
-                    <li class="nav-item"><a href="/">About Us</a></li>
-                    <li class="nav-item"><a href="#calendar-anchor">Calendar</a></li>
-                    <li class="nav-item"><a href="#resources-anchor">Resources</a></li>
-                    <li class="nav-item"><a href="pages/officers.html">Leadership</a></li>
-                    <!-- <li class="nav-item"><a href="pages/contact.html">Contact Us</a></li> -->
-                 <!--   <li class="nav-item"><a href="mailto:{{site.email}}">Contact Us</a></li> -->
-                </ul>
-            </nav>
-            <!-- <a class="smallbutton1" href="mailto:{{site.email}}"><i class="fa fa-fw fa-envelope"></i></a>
-            <a class="smallbutton1" href="{{site.discord_url}}"><img src="./img/discord-brands.png"></a>
-            <a class="smallbutton1" href="{{site.twitter_url}}" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
-            <a class="smallbutton1" href="{{site.instagram_url}}" target="_blank"><i class="fa fa-fw fa-instagram"></i></a> -->
-        </div>
-    </header>
+  <!-- Header / Nav -->
+  <header id="header" role="banner" aria-label="Main">
+    <div class="nav-wrap">
+      <a class="brand" href="/">
+        <span class="brand-badge" aria-hidden="true"></span>
+        Theta Tau — SMU
+      </a>
+      <ul id="navbar" role="navigation" aria-label="Primary">
+        <li><a href="/">About Us</a></li>
+        <li><a href="#calendar-anchor">Calendar</a></li>
+        <li><a href="#resources-anchor">Resources</a></li>
+        <li><a href="#officers">Leadership</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <section id="officers" class="container-fluid">
-        <h2 class="primary-color">Executive Board</h2>
-        <!-- Executive Board -->
-        <div class="officers-grid">
-            <div class="leader-card">
-                <img src="images/regent.jpg" alt="Jackson Reed Picture" class="leader-img">
-                <h3>Regent</h3>
-                <p>Jackson Scott Reed</p>
-                <p><a href="mailto:jsreed@smu.edu">jsreed@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/vice-regent.jpg" alt="Emma Stammeyer Picture" class="leader-img">
-                <h3>Vice Regent</h3>
-                <p>Emma Stammeyer</p>
-                <p><a href="mailto:estammeyer@smu.edu">estammeyer@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/treasurer.jpg" alt="Vaughn Androlowicz Picture" class="leader-img">
-                <h3>Treasurer</h3>
-                <p>Vaughn Androlowicz</p>
-                <p><a href="mailto:vandrolowicz@smu.edu">vandrolowicz@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/scribe.jpg" alt="Gloria Hu Picture" class="leader-img">
-                <h3>Scribe</h3>
-                <p>Gloria Hu</p>
-                <p><a href="mailto:gmhu@smu.edu">gmhu@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/corresponding-secretary.jpg" alt="Crystan Gilbert Picture" class="leader-img">
-                <h3>Corresponding Secretary</h3>
-                <p>Crystan Gilbert</p>
-                <p><a href="mailto:cagilbert@smu.edu">cagilbert@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/member-relations.jpg" alt="Brayden Diaz Picture" class="leader-img">
-                <h3>Member Relations</h3>
-                <p>Brayden Diaz</p>
-                <p><a href="mailto:bsdiaz@smu.edu">bsdiaz@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/marshal.jpg" alt="Michael Llanes Picture" class="leader-img">
-                <h3>Marshal</h3>
-                <p>Michael Llanes</p>
-                <p><a href="mailto:mllanes@smu.edu">mllanes@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/inner-guard.jpg" alt="Austin Carnline Picture" class="leader-img">
-                <h3>Inner Guard</h3>
-                <p>Austin Carnline</p>
-                <p><a href="mailto:lcarnline@smu.edu">lcarnline@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/outer-guard.jpg" alt="Garhett Daves Picture" class="leader-img">
-                <h3>Outer Guard</h3>
-                <p>Garhett Daves</p>
-                <p><a href="mailto:gdaves@smu.edu">gdaves@smu.edu</a></p>
-            </div>
-        </div>
-    </section>
-    <section id="chairs" class="container-fluid">
-        <!-- Committee Chairs -->
-        <h2 class="primary-color">Committee Chairs</h2>
-        <div class="officers-grid">
-            <div class="leader-card">
-                <img src="images/brotherhood-chair.jpg" alt="Will Flinchbaugh Picture" class="leader-img">
-                <h3>Brotherhood Chair</h3>
-                <p>Will Flinchbaugh</p>
-                <p><a href="mailto:wflinchbaugh@smu.edu">wflinchbaugh@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/brotherhood-chair-2.jpg" alt="Avery Dye Picture" class="leader-img">
-                <h3>Brotherhood Chair</h3>
-                <p>Avery Dye</p>
-                <p><a href="mailto:aedye@smu.edu">aedye@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/inner-guard.jpg" alt="Austin Carnline Picture" class="leader-img">
-                <h3>Professional Development Chair</h3>
-                <p>Austin Carnline</p>
-                <p><a href="mailto:lcarnline@smu.edu">lcarnline@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/outer-guard.jpg" alt="Garhett Daves Picture" class="leader-img">
-                <h3>Community Service Chair</h3>
-                <p>Garhett Daves</p>
-                <p><a href="mailto:gdaves@smu.edu">gdaves@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/rush-chair.jpg" alt="Riley Murray Picture" class="leader-img">
-                <h3>Rush/Recruitment Chair</h3>
-                <p>Riley Murray</p>
-                <p><a href="mailto:ramurray@smu.edu">ramurray@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/rush-chair-2.jpg" alt="Grayson Hydinger Picture" class="leader-img">
-                <h3>Rush/Recruitment Chair</h3>
-                <p>Grayson Hydinger</p>
-                <p><a href="mailto:ghydinger@smu.edu">ghydinger@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/new-member-educator.jpg" alt="Avery Dye Picture" class="leader-img">
-                <h3>New Member Educator</h3>
-                <p>Avery Dye</p>
-                <p><a href="mailto:aedye@smu.edu">aedye@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/new-member-educator-2.jpg" alt="Ellie Lim Picture" class="leader-img">
-                <h3>New Member Educator</h3>
-                <p>Ellie Lim</p>
-                <p><a href="mailto:lime@smu.edu">lime@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/fundraising-chair.jpg" alt="Emma Stammeyer Picture" class="leader-img">
-                <h3>Fundraising Chair</h3>
-                <p>Emma Stammeyer</p>
-                <p><a href="mailto:estammeyer@smu.edu">estammeyer@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/intramural-chair.jpg" alt="Jackson Chase Picture" class="leader-img">
-                <h3>Intramural Chair</h3>
-                <p>Jackson Chase</p>
-                <p><a href="mailto:jchase@smu.edu">jchase@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/health-safety-1.jpg" alt="Will Flinchbaugh Picture" class="leader-img">
-                <h3>Merchandise Chair</h3>
-                <p>Will Flinchbaugh</p>
-                <p><a href="mailto:wflinchbaugh@smu.edu">wflinchbaugh@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/social-chair.jpg" alt="Rachel Zuercher Picture" class="leader-img">
-                <h3>Social Chair</h3>
-                <p>Rachel Zuercher</p>
-                <p><a href="mailto:razuercher@smu.edu">razuercher@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/conference-chair.jpg" alt="Jackson ReedPicture" class="leader-img">
-                <h3>Conference Chair</h3>
-                <p>Jackson Reed</p>
-                <p><a href="mailto:jsreed@smu.edu">jsreed@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/website-chair.jpg" alt="Vaughn Picture" class="leader-img">
-                <h3>Web Admin</h3>
-                <p>Vaughn</p>
-                <p><a href="mailto:vandrolowicz@smu.edu">vandrolowicz@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/historian.jpg" alt="Owen Schwartz Picture" class="leader-img">
-                <h3>Historian</h3>
-                <p>Owen Schwartz</p>
-                <p><a href="mailto:oschwartz@smu.edu">oschwartz@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/health-safety-1.jpg" alt="William Flinchbaugh Picture" class="leader-img">
-                <h3>Health & Safety Officer</h3>
-                <p>William Flinchbaugh</p>
-                <p><a href="mailto:wflinchbaugh@smu.edu">wflinchbaugh@smu.edu</a></p>
-            </div>
-            <div class="leader-card">
-                <img src="images/health-safety-2.jpg" alt="Palmer Hurd Picture" class="leader-img">
-                <h3>Health & Safety Officer</h3>
-                <p>Palmer Hurd</p>
-                <p><a href="mailto:phurd@smu.edu">phurd@smu.edu</a></p>
-            </div>
-        </div>
-    </section>
-    
+  <!-- Executive Board -->
+  <section id="officers">
+    <div class="section-inner">
+      <h2>Executive Board <span class="pill">2024–2025</span></h2>
 
-    <footer id="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 Theta Tau - All Rights Reserved</p>
-        </div>
-    </footer>
+      <div class="officers-grid">
+        <article class="leader-card">
+          <img loading="lazy" src="images/regent.jpg" alt="Portrait of Jackson Scott Reed, Regent" class="leader-img">
+          <h3 class="role">Regent</h3>
+          <p class="name">Jackson Scott Reed</p>
+          <p class="email"><a href="mailto:jsreed@smu.edu">jsreed@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/vice-regent.jpg" alt="Portrait of Emma Stammeyer, Vice Regent" class="leader-img">
+          <h3 class="role">Vice Regent</h3>
+          <p class="name">Emma Stammeyer</p>
+          <p class="email"><a href="mailto:estammeyer@smu.edu">estammeyer@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/treasurer.jpg" alt="Portrait of Vaughn Androlowicz, Treasurer" class="leader-img">
+          <h3 class="role">Treasurer</h3>
+          <p class="name">Vaughn Androlowicz</p>
+          <p class="email"><a href="mailto:vandrolowicz@smu.edu">vandrolowicz@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/scribe.jpg" alt="Portrait of Gloria Hu, Scribe" class="leader-img">
+          <h3 class="role">Scribe</h3>
+          <p class="name">Gloria Hu</p>
+          <p class="email"><a href="mailto:gmhu@smu.edu">gmhu@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/corresponding-secretary.jpg" alt="Portrait of Crystan Gilbert, Corresponding Secretary" class="leader-img">
+          <h3 class="role">Corresponding Secretary</h3>
+          <p class="name">Crystan Gilbert</p>
+          <p class="email"><a href="mailto:cagilbert@smu.edu">cagilbert@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/member-relations.jpg" alt="Portrait of Brayden Diaz, Member Relations" class="leader-img">
+          <h3 class="role">Member Relations</h3>
+          <p class="name">Brayden Diaz</p>
+          <p class="email"><a href="mailto:bsdiaz@smu.edu">bsdiaz@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/marshal.jpg" alt="Portrait of Michael Llanes, Marshal" class="leader-img">
+          <h3 class="role">Marshal</h3>
+          <p class="name">Michael Llanes</p>
+          <p class="email"><a href="mailto:mllanes@smu.edu">mllanes@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/inner-guard.jpg" alt="Portrait of Austin Carnline, Inner Guard" class="leader-img">
+          <h3 class="role">Inner Guard</h3>
+          <p class="name">Austin Carnline</p>
+          <p class="email"><a href="mailto:lcarnline@smu.edu">lcarnline@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/outer-guard.jpg" alt="Portrait of Garhett Daves, Outer Guard" class="leader-img">
+          <h3 class="role">Outer Guard</h3>
+          <p class="name">Garhett Daves</p>
+          <p class="email"><a href="mailto:gdaves@smu.edu">gdaves@smu.edu</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Committee Chairs -->
+  <section id="chairs">
+    <div class="section-inner">
+      <h2>Committee Chairs <span class="pill">2024–2025</span></h2>
+
+      <div class="officers-grid">
+        <article class="leader-card">
+          <img loading="lazy" src="images/brotherhood-chair.jpg" alt="Portrait of Will Flinchbaugh, Brotherhood Chair" class="leader-img">
+          <h3 class="role">Brotherhood Chair</h3>
+          <p class="name">Will Flinchbaugh</p>
+          <p class="email"><a href="mailto:wflinchbaugh@smu.edu">wflinchbaugh@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/brotherhood-chair-2.jpg" alt="Portrait of Avery Dye, Brotherhood Chair" class="leader-img">
+          <h3 class="role">Brotherhood Chair</h3>
+          <p class="name">Avery Dye</p>
+          <p class="email"><a href="mailto:aedye@smu.edu">aedye@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/inner-guard.jpg" alt="Portrait of Austin Carnline, Professional Development Chair" class="leader-img">
+          <h3 class="role">Professional Development Chair</h3>
+          <p class="name">Austin Carnline</p>
+          <p class="email"><a href="mailto:lcarnline@smu.edu">lcarnline@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/outer-guard.jpg" alt="Portrait of Garhett Daves, Community Service Chair" class="leader-img">
+          <h3 class="role">Community Service Chair</h3>
+          <p class="name">Garhett Daves</p>
+          <p class="email"><a href="mailto:gdaves@smu.edu">gdaves@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/rush-chair.jpg" alt="Portrait of Riley Murray, Rush/Recruitment Chair" class="leader-img">
+          <h3 class="role">Rush/Recruitment Chair</h3>
+          <p class="name">Riley Murray</p>
+          <p class="email"><a href="mailto:ramurray@smu.edu">ramurray@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/rush-chair-2.jpg" alt="Portrait of Grayson Hydinger, Rush/Recruitment Chair" class="leader-img">
+          <h3 class="role">Rush/Recruitment Chair</h3>
+          <p class="name">Grayson Hydinger</p>
+          <p class="email"><a href="mailto:ghydinger@smu.edu">ghydinger@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/new-member-educator.jpg" alt="Portrait of Avery Dye, New Member Educator" class="leader-img">
+          <h3 class="role">New Member Educator</h3>
+          <p class="name">Avery Dye</p>
+          <p class="email"><a href="mailto:aedye@smu.edu">aedye@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/new-member-educator-2.jpg" alt="Portrait of Ellie Lim, New Member Educator" class="leader-img">
+          <h3 class="role">New Member Educator</h3>
+          <p class="name">Ellie Lim</p>
+          <p class="email"><a href="mailto:lime@smu.edu">lime@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/fundraising-chair.jpg" alt="Portrait of Emma Stammeyer, Fundraising Chair" class="leader-img">
+          <h3 class="role">Fundraising Chair</h3>
+          <p class="name">Emma Stammeyer</p>
+          <p class="email"><a href="mailto:estammeyer@smu.edu">estammeyer@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/intramural-chair.jpg" alt="Portrait of Jackson Chase, Intramural Chair" class="leader-img">
+          <h3 class="role">Intramural Chair</h3>
+          <p class="name">Jackson Chase</p>
+          <p class="email"><a href="mailto:jchase@smu.edu">jchase@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/health-safety-1.jpg" alt="Portrait of Will Flinchbaugh, Merchandise Chair" class="leader-img">
+          <h3 class="role">Merchandise Chair</h3>
+          <p class="name">Will Flinchbaugh</p>
+          <p class="email"><a href="mailto:wflinchbaugh@smu.edu">wflinchbaugh@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/social-chair.jpg" alt="Portrait of Rachel Zuercher, Social Chair" class="leader-img">
+          <h3 class="role">Social Chair</h3>
+          <p class="name">Rachel Zuercher</p>
+          <p class="email"><a href="mailto:razuercher@smu.edu">razuercher@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/conference-chair.jpg" alt="Portrait of Jackson Reed, Conference Chair" class="leader-img">
+          <h3 class="role">Conference Chair</h3>
+          <p class="name">Jackson Reed</p>
+          <p class="email"><a href="mailto:jsreed@smu.edu">jsreed@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/website-chair.jpg" alt="Portrait of Vaughn Androlowicz, Web Admin" class="leader-img">
+          <h3 class="role">Web Admin</h3>
+          <p class="name">Vaughn Androlowicz</p>
+          <p class="email"><a href="mailto:vandrolowicz@smu.edu">vandrolowicz@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/historian.jpg" alt="Portrait of Owen Schwartz, Historian" class="leader-img">
+          <h3 class="role">Historian</h3>
+          <p class="name">Owen Schwartz</p>
+          <p class="email"><a href="mailto:oschwartz@smu.edu">oschwartz@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/health-safety-1.jpg" alt="Portrait of William Flinchbaugh, Health &amp; Safety Officer" class="leader-img">
+          <h3 class="role">Health &amp; Safety Officer</h3>
+          <p class="name">William Flinchbaugh</p>
+          <p class="email"><a href="mailto:wflinchbaugh@smu.edu">wflinchbaugh@smu.edu</a></p>
+        </article>
+
+        <article class="leader-card">
+          <img loading="lazy" src="images/health-safety-2.jpg" alt="Portrait of Palmer Hurd, Health &amp; Safety Officer" class="leader-img">
+          <h3 class="role">Health &amp; Safety Officer</h3>
+          <p class="name">Palmer Hurd</p>
+          <p class="email"><a href="mailto:phurd@smu.edu">phurd@smu.edu</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" role="contentinfo">
+    <div class="footer-content">
+      <p>&copy; 2024 Theta Tau — All Rights Reserved</p>
+    </div>
+  </footer>
 </body>
 </html>
