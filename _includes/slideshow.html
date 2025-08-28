@@ -1,11 +1,16 @@
-<!-- Auto-build slideshow from /img/photos/*.{jpg,jpeg,png} -->
+<!-- _includes/slideshow.html -->
 <section id="slideshow" aria-label="Chapter photo slideshow">
   <div class="slideshow-container">
-    {% assign photos = site.static_files
-       | where_exp: "f", "f.path contains '/img/photos/'"
-       | where_exp: "f", "f.extname == '.jpg' or f.extname == '.jpeg' or f.extname == '.png'" 
-    %}
-    {% assign photos = photos | sort: "name" %}
+
+    {% comment %}
+      Pull all files from /img/photos, then gather jpg/jpeg/png separately and concat.
+      Works on GitHub Pages (Jekyll 3.x).
+    {% endcomment %}
+    {% assign photos_all = site.static_files | where_exp: 'f', "f.path contains '/img/photos/'" %}
+    {% assign jpgs  = photos_all | where: 'extname', '.jpg'  %}
+    {% assign jpegs = photos_all | where: 'extname', '.jpeg' %}
+    {% assign pngs  = photos_all | where: 'extname', '.png'  %}
+    {% assign photos = jpgs | concat: jpegs | concat: pngs | sort: 'name' %}
 
     {% for f in photos %}
       <div class="slides fade" {% unless forloop.first %}style="display:none"{% endunless %}>
@@ -19,24 +24,28 @@
 </section>
 
 <script>
-  // start on a random slide based on how many were rendered
-  let slides = document.getElementsByClassName("slides");
-  let slideIndex = slides.length ? Math.floor(Math.random() * slides.length) : 0;
-  showSlides(slideIndex);
-
-  function plusSlides(n){ showSlides(slideIndex += n); }
-
-  function showSlides(n){
+  // Init after Liquid rendered slides are in the DOM
+  (function(){
+    var slides = document.getElementsByClassName("slides");
     if (!slides.length) return;
-    if (n >= slides.length) slideIndex = 0;
-    if (n < 0) slideIndex = slides.length - 1;
-    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-    slides[slideIndex].style.display = "block";
-  }
 
-  // optional: keyboard navigation
-  document.addEventListener("keydown", (e)=>{
-    if (e.key === "ArrowRight") plusSlides(1);
-    if (e.key === "ArrowLeft")  plusSlides(-1);
-  });
+    var slideIndex = Math.floor(Math.random() * slides.length);
+    showSlides(slideIndex);
+
+    function plusSlides(n){ showSlides(slideIndex += n); }
+    window.plusSlides = plusSlides; // expose for buttons
+
+    function showSlides(n){
+      if (n >= slides.length) slideIndex = 0;
+      if (n < 0) slideIndex = slides.length - 1;
+      for (var i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slides[slideIndex].style.display = "block";
+    }
+
+    // optional: arrow keys
+    document.addEventListener("keydown", function(e){
+      if (e.key === "ArrowRight") plusSlides(1);
+      if (e.key === "ArrowLeft")  plusSlides(-1);
+    });
+  })();
 </script>
