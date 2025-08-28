@@ -28,9 +28,9 @@ $gradient10: #4895EF;
 :root {
   --tt-darkred: #7a0000; // update to exact brand if desired (or use $thetatau-darkred)
   --tt-red: #9c0b0b;
-  --bg: #0f0f12;
-  --card: #17181d;
-  --text: #f6f7fb;
+  --bg: $thetatau-darkred
+  --card: #9c0b0b;
+  --text: $thetatau-offwhite;
   --muted: #cbd0dd;
   --ring: rgba(255, 255, 255, 0.08);
   --shadow: 0 10px 30px rgba(0,0,0,.35);
