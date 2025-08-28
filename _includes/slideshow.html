@@ -1,47 +1,42 @@
-<!-- Since this is running on the browser, we have to enter each filename manually (in index.md). Is there a better way to do this?-->
+<!-- Auto-build slideshow from /img/photos/*.{jpg,jpeg,png} -->
+<section id="slideshow" aria-label="Chapter photo slideshow">
+  <div class="slideshow-container">
+    {% assign photos = site.static_files
+       | where_exp: "f", "f.path contains '/img/photos/'"
+       | where_exp: "f", "f.extname == '.jpg' or f.extname == '.jpeg' or f.extname == '.png'" 
+    %}
+    {% assign photos = photos | sort: "name" %}
 
-<section id="slideshow">
-    <div class="slideshow-container text-center">
-    <!-- <div class="slideshow-container text-center"> -->
+    {% for f in photos %}
+      <div class="slides fade" {% unless forloop.first %}style="display:none"{% endunless %}>
+        <img src="{{ f.path | relative_url }}" alt="Chapter photo {{ forloop.index }}" style="width:100%">
+      </div>
+    {% endfor %}
 
-        <!-- Full-width images with number and caption text -->
-        {% for item in page.slideshow-filenames %}
-        <div class="slides fade">
-            <img src="../img/photos/{{item}}.jpg" style="width:100%">
-        </div>
-        {% endfor %}
-    
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
+    <button class="prev" type="button" aria-label="Previous slide" onclick="plusSlides(-1)">&#10094;</button>
+    <button class="next" type="button" aria-label="Next slide" onclick="plusSlides(1)">&#10095;</button>
+  </div>
 </section>
 
 <script>
+  // start on a random slide based on how many were rendered
+  let slides = document.getElementsByClassName("slides");
+  let slideIndex = slides.length ? Math.floor(Math.random() * slides.length) : 0;
+  showSlides(slideIndex);
 
-    var slideIndex = Math.ceil(Math.random() * 34);
-    showSlides(slideIndex);
+  function plusSlides(n){ showSlides(slideIndex += n); }
 
-    console.log("Running Script");
+  function showSlides(n){
+    if (!slides.length) return;
+    if (n >= slides.length) slideIndex = 0;
+    if (n < 0) slideIndex = slides.length - 1;
+    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    slides[slideIndex].style.display = "block";
+  }
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("slides");
-
-        console.log(slides);
-        console.log(slideIndex);
-
-        if (n > slides.length - 1) {slideIndex = 0;}
-        if (n < 0) {slideIndex = slides.length - 1;}
-        
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-
-        slides[slideIndex].style.display = "block";
-    }
+  // optional: keyboard navigation
+  document.addEventListener("keydown", (e)=>{
+    if (e.key === "ArrowRight") plusSlides(1);
+    if (e.key === "ArrowLeft")  plusSlides(-1);
+  });
 </script>
