@@ -1,695 +1,385 @@
----
----
+// =============================================================================
+// SMU Theta Tau — Site Styles (Cleaned)
+// =============================================================================
+
+// Fonts: include in HTML <head> for best perf:
+// <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
 @charset "utf-8";
 
-/* path to glyphicons */
-$icon-font-path: "/bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+// -----------------------------------------------------------------------------
+// 1) Brand & Theme Tokens
+// -----------------------------------------------------------------------------
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+// SCSS brand variables
+$thetatau-gold: rgba(215, 158, 0, 0.78);
+$thetatau-offwhite: #edeab5;
+$thetatau-darkred: #660000;
 
-// ------------------------------------------------------------------------------
-//                                    Colors
-// ------------------------------------------------------------------------------
-
-$thetatau-gold: rgba(215, 158, 0, 0.78);    // Theta Tau Gold
-$thetatau-offwhite: #edeab5;    // Theta Tau Off-White
-$thetatau-darkred: #660000;      // Theta Tau Dark Red
-$bg2: #303030;
-
+// Gradients (optional accents)
 $gradient1: #F72585;
-$gradient2: #B5179E;
-$gradient3: #7209B7;
-$gradient4: #560BAD;
-$gradient5: #480CA8;
-$gradient6: #3A0CA3;
-$gradient7: #3F37C9;
-$gradient8: #4361EE;
-$gradient9: #3894FF;
 $gradient10: #4895EF;
-$gradient11: #4CC9F0;
 
-$twitch: #ff9df2;
-$discord: #a79dff;
-
-// ------------------------------------------------------------------------------
-//                                    General
-// ------------------------------------------------------------------------------
-
-// Hide scrollbar
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+// CSS variables (mapped from SCSS where relevant)
+:root {
+  --tt-darkred: #7a0000; // update to exact brand if desired (or use $thetatau-darkred)
+  --tt-red: #9c0b0b;
+  --bg: #0f0f12;
+  --card: #17181d;
+  --text: #f6f7fb;
+  --muted: #cbd0dd;
+  --ring: rgba(255, 255, 255, 0.08);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 16px;
+  --max: 1200px;
 }
 
-h1, h2, p, a {
-    margin: 5px;
-    color: $thetatau-offwhite;
-}
+// -----------------------------------------------------------------------------
+// 2) Base / Reset
+// -----------------------------------------------------------------------------
 
-h3 {
-    margin: 5px;
-    color: $thetatau-gold;
-}
-
-h1 {
-    padding-bottom: 3vh;
-    padding-top: 3vh;
-}
-
-p {
-    font-size: 1.3rem;
-}
+* { box-sizing: border-box; }
+html, body { height: 100%; max-width: 100%; overflow-x: hidden; }
 
 body {
-    font-family: 'serif' !important;
-    margin: 0 !important;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 800px at 100% -10%, rgba(255,255,255,0.06), transparent 60%),
+    radial-gradient(1200px 800px at 0% 110%, rgba(255,255,255,0.06), transparent 60%),
+    linear-gradient(180deg, #121317, #0b0c10 60%);
+  background-attachment: fixed;
 }
 
-section {
-    padding: 1vh 20vw 10vh 20vw;
+h1, h2, h3 { letter-spacing: .3px; margin: 0 0 8px; }
+h2 { font-size: clamp(28px, 3vw, 36px); }
+p, a { margin: 5px; }
+p { font-size: 1.05rem; }
+@media (max-width: 600px) { p { font-size: 1rem; } }
+
+// Utility pills
+.pill {
+  font-size: 13px; padding: 6px 10px; border-radius: 999px;
+  border: 1px solid var(--ring); color: var(--muted); background: #ffffff08;
 }
 
-.btn {
-    background-color: $thetatau-offwhite;
-    color: $thetatau-darkred;
-    border-radius: 2vw;
-    padding: 5vw;
-    margin: 5px;
+// Section container
+.section-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 42px 20px 28px;
+}
+
+// Optional section background accents
+#hero, #officers, #chairs {
+  background: linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 18%, transparent), transparent 60%);
+}
+
+// -----------------------------------------------------------------------------
+// 3) Header / Nav
+// -----------------------------------------------------------------------------
+
+header {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: saturate(120%) blur(8px);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  border-bottom: 1px solid var(--ring);
+}
+
+.nav-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+
+.brand {
+  font-weight: 800; color: #fff; text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+  letter-spacing: .4px;
+}
+.brand-badge {
+  width: 32px; height: 32px; border-radius: 10px;
+  background: linear-gradient(145deg, var(--tt-red), var(--tt-darkred));
+  box-shadow: inset 0 0 0 1px #ffffff26, 0 6px 18px rgba(156,11,11,.35);
+}
+
+.navbar { display: flex; gap: 14px; flex-wrap: wrap; }
+.nav-link {
+  display: block; padding: 10px 14px; text-decoration: none; color: var(--muted);
+  border-radius: 10px; border: 1px solid transparent; transition: .2s ease;
+  &:hover { color: #fff; border-color: var(--ring); background: #ffffff07; }
+}
+
+// Mobile nav toggle
+.nav-toggle { display: none; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+.nav-toggle-bar { display: block; width: 26px; height: 2px; background: #e8ebf5; margin: 5px 0; }
+
+@media (max-width: 880px) {
+  .nav-toggle { display: block; }
+  .navbar {
+    position: absolute; right: 20px; top: 58px;
+    display: none; flex-direction: column; gap: 10px; padding: 12px;
+    background: #0b0c10e6; border: 1px solid var(--ring); border-radius: 12px;
+    box-shadow: var(--shadow);
+    &.open { display: flex; }
   }
-
-.btn:hover {
-    color: $gradient1;
+  body.nav-open { overflow: hidden; }
 }
 
-.primary-color {
-    color: $thetatau-offwhite;
-}
+// -----------------------------------------------------------------------------
+// 4) Hero (Homepage)
+// -----------------------------------------------------------------------------
 
-li {
-    list-style: none;
-}
+#hero {
+  position: relative;
+  min-height: clamp(420px, 70vh, 760px);
+  isolation: isolate;
+  border-bottom: 1px solid var(--ring);
 
-@media only screen and (max-width: 600px) {
-    p {
-        font-size: 1rem;
-    }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url("img/gunther-caruth.png");
+    background-size: cover; background-position: center;
+    transform: scale(1.02);
+    filter: saturate(105%) contrast(102%);
+    z-index: -2;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55) 60%, rgba(0,0,0,.65)),
+      radial-gradient(60% 55% at 50% 30%, rgba(0,0,0,.20), transparent 70%);
+    z-index: -1; backdrop-filter: blur(.5px);
+  }
+  .hero-inner {
+    max-width: var(--max); margin: 0 auto;
+    padding: clamp(48px, 6vw, 96px) 20px;
+    display: grid; align-items: end; min-height: inherit;
+  }
+  .hero-content {
+    max-width: 780px; padding: 18px 20px;
+    border-radius: var(--radius); border: 1px solid var(--ring);
+    background: color-mix(in srgb, #0b0c10 60%, transparent);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(3px) saturate(110%);
+  }
+  .hero-title {
+    margin: 0 0 6px;
+    font-size: clamp(28px, 5vw, 56px); line-height: 1.05; color: #fff;
+  }
+  .hero-subtitle { margin: 0; color: var(--muted); font-size: clamp(16px, 2.2vw, 20px); }
 
-    section {
-        padding: 5vh;
-    }
-}
-
-// ------------------------------------------------------------------------------
-//                                   Main.html
-// ------------------------------------------------------------------------------
-
-#particles-js {
-    z-index: 1;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-}
-
-#main {
-    width: 100vw;
-    // height: 100vh;
-    position: relative;
-
-    // Navbar
-    .navbar {
-        z-index: 2;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        padding: 0rem 0rem;
-    }
-
-    // Image placement
-    .main-img {
-        text-align: center;
-        position: absolute;
-        // width: 100vw;
-        height: 135vh;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        filter: opacity(70%);
-    }
-
-    .thetatau-img {
-        display: block;
-        margin-top: 10vh;
-        z-index: 1;
-        filter: opacity(100%);
-    }
-
-    .hill1 {
-        top: 30vh;
-    }
-
-    .hill2 {
-        top: 50vh;
-    }
-
-    .hill3 {
-        top: 70vh;
-    }
-    
-    h1 {
-        padding-bottom: 0;
-    }
-
-    p, li {
-        color: $bg2;
-    }
-
-    @media only screen and (max-width: 600px) {
-        .thetatau-img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-            z-index: 1;
-            filter: opacity(100%);
-        }
-    }
-
-    button {
-        border-radius: 1rem;
-        padding: 0.5rem 1rem;
-    }
-
-    #rush-div {
-        
-    }
-
-    #rush-form {
-        /*display: flex;*/
-        /*text-align: center;
-        /*width: 640px;*/
-        width: 84vw;
-        height: 1382px;
-
-    }
-
-    iframe {
-        margin-bottom: 10vh;
-    }
-}
-
-.main-content {
-    position: absolute;
-    top: 8vh;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-}
-
-.title-header{
-    padding-bottom: 575px;
-    margin-top: -50px;
-    display: flex;
-    justify-content: center;
-
-}
-
-#navbar {
-    
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    
-      
-    li {
-      float: left;
-    }
-      
-    li a {
-      font-size: 1.2rem;
-      display: block;
-      color: #111;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-      
-    /* Change the link color to #111 (black) on hover */
-    li a:hover {
-      background-color: #FFF;
-    }
-
-    @media only screen and (max-width: 600px) {
-        display: none;
-    }
-}
-
-// ------------------------------------------------------------------------------
-//                                  Header.html
-// ------------------------------------------------------------------------------
-
-#header {
-    background: $thetatau-gold;
-    height: 10vh;
-    position: relative;
-    z-index: 2;
-    
-    img {
-        width: 3rem;
-        padding: 0 0.5rem;
-    }
-
-    img:hover {
-        filter: brightness(70%);
-        transition: 0.2s
-    }
-
-    a {
-        color: $thetatau-darkred;
-        font-size: 2rem;
-    }
-
-    a:hover {
-        filter: brightness(70%);
-        transition: 0.2s;
-    }
-
-    .header-content {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        top: 30%;
-    }
-
-    @media only screen and (max-width: 600px) {
-        .header-content {
-            padding-bottom: 3vh;
-        }
-    }
-}
-
-// ------------------------------------------------------------------------------
-//                                 Slideshow.html
-// ------------------------------------------------------------------------------
-
-#slideshow {
-
-    background: $thetatau-darkred;
-
-    .slideshow-container {
-      max-width: 750px;
-      max-height: 400px;
-      position: relative;
-      margin: auto;
-    }
-  
-    .slides {
-      display: none;
-    }
-  
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 70%;
-      width: auto;
-      margin-top: -22px;
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 36px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-    }
-  
-    .prev {
-      left: 0;
-      border-radius: 0 6px 6px 0;
-    }
-  
-    .next {
-      right: 0;
-      border-radius: 6px 0 0 6px;
-    }
-  
-    .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-  
-    .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
-      animation-name: fade;
-      animation-duration: 1.5s;
-      opacity: 1;
-    }
-  
-    @-webkit-keyframes fade {
-      from {opacity: .4}
-      to {opacity: 1}
-    }
-  
-    @keyframes fade {
-        0% {top: 100%}
-        4% {top: 0%}
-        33.33% {top: 0%}
-        37.33% {top: -100%}
-        100% {top: -100%}
+  .hero-actions {
+    margin-top: 14px; display: flex; gap: 12px; flex-wrap: wrap;
+    .btn-ghost {
+      display: inline-block; padding: 10px 14px; border-radius: 12px;
+      border: 1px solid var(--ring); color: #e9ebf5; text-decoration: none;
+      background: #ffffff0a; transition: .18s ease;
+      &:hover { color: #fff; border-color: #ffffff2a; background: #ffffff12; transform: translateY(-1px); }
     }
   }
 
-// ------------------------------------------------------------------------------
-//                                  AboutUs.html
-// ------------------------------------------------------------------------------
+  @media (max-width: 560px) {
+    .hero-content { background: color-mix(in srgb, #0b0c10 70%, transparent); }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 5) About
+// -----------------------------------------------------------------------------
 
 #about-us {
-    background: $thetatau-darkred;
-    position: relative;
-    margin-top: 0;
-    margin-bottom: 5;
-    padding-bottom: 2vh;
-    z-index: 2;
-
-    // img {
-    //     position: absolute;
-    //     width: 100vw;
-    //     z-index: 1;
-    // }
+  background: linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 14%, transparent), transparent 60%);
+  position: relative; z-index: 1;
 }
 
-.aboutus-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.about-grid {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 26px; align-items: center;
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
 }
 
-// ------------------------------------------------------------------------------
-//                                 Calendar.html
-// ------------------------------------------------------------------------------
+.about-copy .lede {
+  color: var(--muted); font-size: clamp(16px, 2.2vw, 18px);
+  margin: 6px 0 10px; max-width: 62ch;
+}
+
+.quote-card {
+  margin-top: 16px; padding: 16px 18px; border-radius: var(--radius);
+  border: 1px solid var(--ring); background: linear-gradient(180deg, #191a20, #14161b);
+  box-shadow: var(--shadow);
+}
+.quote { margin: 0 0 6px; font-style: italic; color: #e9ebf5; }
+.cite  { margin: 0; color: var(--muted); font-size: 14px; }
+
+.logo-card {
+  margin: 0; padding: 18px; border-radius: var(--radius); border: 1px solid var(--ring);
+  background: linear-gradient(180deg, #191a20, #14161b); box-shadow: var(--shadow);
+  text-align: center;
+}
+.chapter-logo {
+  width: min(280px, 80%); aspect-ratio: 1 / 1; object-fit: contain; display: block;
+  margin: 6px auto 10px; border-radius: 14px; background: #0c0d11; border: 1px solid #ffffff20;
+  box-shadow: 0 10px 20px rgba(0,0,0,.35);
+}
+.logo-caption { margin: 0; color: var(--muted); font-size: 14px; }
+
+// -----------------------------------------------------------------------------
+// 6) Calendar
+// -----------------------------------------------------------------------------
 
 #calendar {
-    background: $thetatau-darkred;
-    position: relative;
-    z-index: 2;
+  background: linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 16%, transparent), transparent 60%);
+  position: relative; z-index: 1;
 
-    img {
-        position: absolute;
-        width: 100vw;
-        z-index: 1;
-    }
+  .lede {
+    color: var(--muted); font-size: clamp(16px, 2.2vw, 18px);
+    margin: 0 0 20px; max-width: 62ch;
+  }
 
-    iframe{
-        filter: invert(.9) saturate(0.7) hue-rotate(120deg);
+  .calendar-card {
+    border-radius: var(--radius); border: 1px solid var(--ring);
+    background: linear-gradient(180deg, #191a20, #14161b); box-shadow: var(--shadow);
+    padding: 12px;
+  }
+  .calendar-wrapper {
+    position: relative; width: 100%; padding-top: 75%; // 4:3
+    iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border-radius: var(--radius);
+      border: 0;
     }
+  }
 }
 
-.aboutus-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-// ------------------------------------------------------------------------------
-//                                 Resources.html
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// 7) Resources
+// -----------------------------------------------------------------------------
 
 #resources {
-    background: $thetatau-darkred;
-    position: relative;
-    z-index: 2;
+  background: linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 14%, transparent), transparent 60%);
+  position: relative; z-index: 1;
 
-    img {
-        position: absolute;
-        width: 100vw;
-        z-index: 1;
-    }
-
-    a {
-        font-size: 1.2rem;
-    }
+  .lede {
+    color: var(--muted); font-size: clamp(16px, 2.2vw, 18px);
+    margin: 0 0 24px; max-width: 62ch;
+  }
 }
 
-.aboutus-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.resources-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px;
 }
 
-// ------------------------------------------------------------------------------
-//                                  Footer.html
-// ------------------------------------------------------------------------------
+.resource-card {
+  display: block; // (fixed: previously unfinished)
+  padding: 18px 20px; border-radius: var(--radius);
+  border: 1px solid var(--ring); background: linear-gradient(180deg, #191a20, #14161b);
+  box-shadow: var(--shadow); color: var(--text); text-decoration: none;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+
+  h3 { margin: 0 0 8px; font-size: 18px; color: #fff; }
+  p  { margin: 0; font-size: 14px; color: var(--muted); }
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: #ffffff2a;
+    box-shadow: 0 14px 32px rgba(0,0,0,.45);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// 8) Officers / Chairs
+// -----------------------------------------------------------------------------
+
+#officers {
+  background: linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 22%, transparent), transparent 60%);
+}
+#chairs {
+  background: linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 16%, transparent), transparent 60%);
+  border-top: 1px solid var(--ring);
+}
+
+.officers-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 12px;
+}
+
+.leader-card {
+  background: linear-gradient(180deg, #191a20, #14161b);
+  border-radius: var(--radius); border: 1px solid var(--ring);
+  box-shadow: var(--shadow); padding: 18px; position: relative; overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+
+  &::after {
+    content: ""; position: absolute; inset: -1px; border-radius: inherit;
+    background: radial-gradient(400px 160px at -10% -10%, #ffffff12, transparent 40%);
+    pointer-events: none; mix-blend-mode: overlay;
+  }
+  &:hover { transform: translateY(-3px); border-color: #ffffff2a; box-shadow: 0 16px 40px rgba(0,0,0,.45); }
+}
+
+.leader-img {
+  width: 128px; height: 128px; border-radius: 14px; object-fit: cover; display: block;
+  margin: 6px auto 14px; border: 1px solid #ffffff20; background: #0c0d11;
+  box-shadow: 0 10px 20px rgba(0,0,0,.35);
+}
+.role  { margin: 0; font-size: 16px; color: #e9ebf5; font-weight: 700; text-align: center; }
+.name  { margin: 6px 0 10px; color: var(--muted); text-align: center; font-weight: 500; }
+.email { text-align: center; margin: 0;
+  a { color: #d6dae8; text-decoration: none; border-bottom: 1px dashed #ffffff30; transition: .15s ease;
+      &:hover { color: #fff; border-bottom-color: transparent; }
+  }
+}
+
+@media (max-width: 520px) {
+  #navbar { gap: 8px; }
+  .nav-link { padding: 8px 10px; font-size: 14px; }
+  .leader-img { width: 110px; height: 110px; border-radius: 12px; }
+}
+
+// -----------------------------------------------------------------------------
+// 9) Slideshow
+// -----------------------------------------------------------------------------
+
+#slideshow {
+  background: var(--tt-darkred);
+
+  .slideshow-container { max-width: 750px; max-height: 400px; position: relative; margin: auto; }
+  .slides { display: none; }
+
+  .prev, .next {
+    cursor: pointer; position: absolute; top: 70%;
+    width: auto; margin-top: -22px; padding: 16px; color: #fff;
+    font-weight: bold; font-size: 36px; transition: 0.6s ease;
+    border-radius: 0 6px 6px 0; user-select: none;
+    &:hover { background-color: rgba(0,0,0,0.8); }
+  }
+  .prev { left: 0; }
+  .next { right: 0; border-radius: 6px 0 0 6px; }
+
+  .fade {
+    animation-name: fade; animation-duration: 1.5s; opacity: 1;
+  }
+  @keyframes fade { from { opacity: .4; } to { opacity: 1; } }
+}
+
+// -----------------------------------------------------------------------------
+// 10) Footer
+// -----------------------------------------------------------------------------
 
 #footer {
-    background: $thetatau-gold;
-    height: 8vh;
-    position: relative;
-    z-index: 2;
-    
-    img {
-        width: 3rem;
-        padding: 0 0.5rem;
-    }
+  border-top: 1px solid var(--ring);
+  background: #0b0c10cc; backdrop-filter: blur(6px);
 
-    img:hover {
-        filter: brightness(70%);
-        transition: 0.2s
-    }
-
-    a {
-        color: $thetatau-darkred;
-        font-size: 2rem;
-    }
-
-    a:hover {
-        filter: brightness(70%);
-        transition: 0.2s;
-    }
-
-    .footer-content {
-        background: $thetatau-gold;
-        position: absolute;
-        width: 100%;
-        height: auto;
-        top: 30%;
-    }
-
-    @media only screen and (max-width: 600px) {
-        .footer-content {
-            padding-bottom: 3vh;
-        }
-    }
+  .footer-content {
+    max-width: var(--max); margin: 0 auto; padding: 18px 20px 28px;
+    color: var(--muted); font-size: 14px; text-align: center;
+  }
 }
 
-// ------------------------------------------------------------------------------
-//                                    Imports
-// ------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// (Optional) Legacy Gold Header/Footer (remove if not needed)
+// -----------------------------------------------------------------------------
+// #header, #footer { background: $thetatau-gold; }
+// #header a, #footer a { color: $thetatau-darkred; }
+// .primary-color { color: $thetatau-offwhite; }
 
-// ------------------------------------------------------------------------------
-//                                 officers.html
-// ------------------------------------------------------------------------------
-
-:root{
-      --tt-darkred: $thetatau-darkred
-      --tt-red: #7a0000;  /* accent */
-      --bg: #0f0f12;
-      --card: #17181d;
-      --text: #f6f7fb;
-      --muted: #cbd0dd;
-      --ring: rgba(255,255,255,0.08);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-      --max: 1200px;
-    }
-
-    *{ box-sizing: border-box; }
-    html, body{ height:100%; }
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(1200px 800px at 100% -10%, rgba(255,255,255,0.06), transparent 60%),
-        radial-gradient(1200px 800px at 0% 110%, rgba(255,255,255,0.06), transparent 60%),
-        linear-gradient(180deg, #121317, #0b0c10 60%);
-      background-attachment: fixed;
-    }
-
-    /* ---------- Header / Nav ---------- */
-    header{
-      position: sticky; top:0; z-index:10;
-      backdrop-filter: saturate(120%) blur(8px);
-      background: color-mix(in srgb, var(--bg) 80%, transparent);
-      border-bottom: 1px solid var(--ring);
-    }
-    .nav-wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 14px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-    .brand{
-      font-weight: 800;
-      letter-spacing:.4px;
-      color: white;
-      text-decoration: none;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .brand-badge{
-      width:32px;height:32px;border-radius:10px;
-      background: linear-gradient(145deg, var(--tt-red), var(--tt-darkred));
-      box-shadow: inset 0 0 0 1px #ffffff26, 0 6px 18px rgba(156,11,11,.35);
-    }
-
-    #navbar{
-      list-style: none;
-      display:flex; gap: 14px; padding:0; margin:0;
-      flex-wrap: wrap;
-    }
-    #navbar a{
-      display:block;
-      padding:10px 14px;
-      text-decoration:none;
-      color: var(--muted);
-      border-radius: 10px;
-      border: 1px solid transparent;
-      transition: .2s ease;
-    }
-    #navbar a:hover{
-      color: white;
-      border-color: var(--ring);
-      background: #ffffff07;
-    }
-
-    /* ---------- Sections ---------- */
-    section{
-      position: relative;
-      z-index: 1;
-    }
-    .section-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 42px 20px 26px;
-    }
-    h2{
-      margin: 0 0 18px;
-      font-size: clamp(28px, 3vw, 36px);
-      letter-spacing:.3px;
-      display:flex; align-items:center; gap:10px;
-    }
-    .pill{
-      font-size: 13px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--ring);
-      color: var(--muted);
-      background: #ffffff08;
-    }
-
-    /* ---------- Grid ---------- */
-    .officers-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 12px;
-    }
-
-    /* ---------- Card ---------- */
-    .leader-card{
-      background: linear-gradient(180deg, #191a20, #14161b);
-      border-radius: var(--radius);
-      border: 1px solid var(--ring);
-      box-shadow: var(--shadow);
-      padding: 18px;
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-      position:relative;
-      overflow:hidden;
-    }
-    .leader-card::after{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius: inherit;
-      background: radial-gradient(400px 160px at -10% -10%, #ffffff12, transparent 40%);
-      pointer-events:none;
-      mix-blend-mode: overlay;
-    }
-    .leader-card:hover{
-      transform: translateY(-3px);
-      border-color: #ffffff2a;
-      box-shadow: 0 16px 40px rgba(0,0,0,.45);
-    }
-
-    .leader-img{
-      width: 128px; height: 128px;
-      border-radius: 14px;
-      object-fit: cover;
-      display:block; margin: 6px auto 14px;
-      box-shadow: 0 10px 20px rgba(0,0,0,.35);
-      border: 1px solid #ffffff20;
-      background: #0c0d11;
-    }
-    .role{
-      margin:0;
-      font-size: 16px;
-      color: #e9ebf5;
-      font-weight: 700;
-      text-align:center;
-    }
-    .name{
-      margin: 6px 0 10px;
-      color: var(--muted);
-      text-align:center;
-      font-weight: 500;
-    }
-    .email{
-      text-align:center;
-      margin: 0;
-    }
-    .email a{
-      color: #d6dae8;
-      text-decoration: none;
-      border-bottom: 1px dashed #ffffff30;
-      transition: .15s ease;
-    }
-    .email a:hover{
-      color: white;
-      border-bottom-color: transparent;
-    }
-
-    /* ---------- Section accents ---------- */
-    #officers{
-      background:
-        linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 22%, transparent), transparent 60%);
-    }
-    #chairs{
-      background:
-        linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 16%, transparent), transparent 60%);
-      border-top: 1px solid var(--ring);
-    }
-
-    /* ---------- Footer ---------- */
-    footer{
-      border-top: 1px solid var(--ring);
-      background: #0b0c10cc;
-      backdrop-filter: blur(6px);
-    }
-    .footer-content{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px 20px 28px;
-      color: var(--muted);
-      font-size: 14px;
-      text-align:center;
-    }
-
-    /* ---------- Small screens tweaks ---------- */
-    @media (max-width: 520px){
-      #navbar { gap:8px; }
-      #navbar a { padding:8px 10px; font-size:14px; }
-      .leader-img{ width:110px; height:110px; border-radius:12px; }
-    }
