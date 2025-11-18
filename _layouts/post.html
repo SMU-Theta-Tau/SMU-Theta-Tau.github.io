@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
+
+<div class="post-container">
+
+  <!-- Featured Image -->
+  {% if page.image %}
+  <div class="post-hero">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+  </div>
+  {% endif %}
+
+  <h2 class="post-title">{{ page.title }}</h2>
+
+  <p class="post-meta">
+    {{ page.date | date: "%B %d, %Y" }}
+    {% if page.author %}
+      · <span class="post-author">{{ page.author }}</span>
+    {% endif %}
+  </p>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div>

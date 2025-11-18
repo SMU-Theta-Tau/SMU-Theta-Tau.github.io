@@ -1,0 +1,51 @@
+---
+layout: default
+title: News
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/news-list.css' | relative_url }}">
+
+<section class="news-list-section">
+  <div class="news-list-container">
+    
+    <h2 class="news-list-title">Chapter News</h2>
+    <p class="news-list-subtitle">Updates, articles, and chapter highlights</p>
+
+    <div class="news-list-grid">
+
+      {% for post in site.posts %}
+      <article class="news-card">
+
+        <a href="{{ post.url | relative_url }}" class="news-card-imgwrap">
+          {% if post.image %}
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+          {% else %}
+            <img src="/pages/images/placeholder.png" alt="No image available">
+          {% endif %}
+        </a>
+
+        <div class="news-card-body">
+          <h2 class="news-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+
+          <p class="news-card-meta">
+            {{ post.date | date: "%B %d, %Y" }}
+            {% if post.author %} · {{ post.author }} {% endif %}
+          </p>
+
+          <p class="news-card-excerpt">
+            {{ post.excerpt | strip_html | truncate: 150 }}
+          </p>
+
+          <a href="{{ post.url | relative_url }}" class="news-card-readmore">
+            Read Article →
+          </a>
+        </div>
+
+      </article>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

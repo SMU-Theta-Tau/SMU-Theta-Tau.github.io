@@ -651,3 +651,133 @@ header {
 // #header a, #footer a { color: $thetatau-darkred; }
 // .primary-color { color: $thetatau-offwhite; }
 
+/* --------------------------------------
+   NEWS CAROUSEL — MATCH MAIN SLIDESHOW
+--------------------------------------- */
+
+#news-carousel {
+  max-width: 900px;
+  margin: 60px auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+.news-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Slideshow container */
+.news-slideshow-container {
+  position: relative;
+}
+
+/* Each slide */
+.newsSlide {
+  display: none;
+  position: relative;
+}
+
+.news-img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+/* Overlay */
+.news-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 24px 28px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
+  border-radius: 0 0 14px 14px;
+
+  color: white;
+}
+
+.news-overlay h3 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.news-date {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 15px;
+}
+
+/* Arrows */
+.news-prev, .news-next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  padding: 16px;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  user-select: none;
+  transition: 0.3s ease;
+  border-radius: 6px;
+}
+
+.news-prev { left: -40px; }
+.news-next { right: -40px; }
+
+.news-prev:hover,
+.news-next:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+/* Dots */
+.news-dots {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.news-dot {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.news-dot.active {
+  background-color: #fff;
+}
+
+/* Force all news carousel images to share the same aspect ratio */
+.news-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;       /* ← change this ratio if you want */
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+}
+
+.news-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* ← MAGIC: fills the frame evenly */
+  display: block;
+  border-radius: 14px;
+}
+
+/* Fade animation */
+.fade {
+  animation-name: newsFade;
+  animation-duration: 1.3s;
+}
+
+@keyframes newsFade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,74 @@
+<section id="news-carousel" class="slideshow-section">
+
+  <h2 class="news-title">News <span class="pill">Keep up with the chapter</span></h2>
+
+  <div class="news-slideshow-container">
+
+    {% assign recent_posts = site.posts | slice: 0, 3 %}
+
+    {% for post in recent_posts %}
+        <a href="{{ post.url | relative_url }}" class="newsSlide fade news-slide-link">
+            <div class="news-img-wrapper">
+            <img src="{{ post.image }}" class="news-img" alt="{{ post.title }}">
+            </div>
+
+            <div class="news-overlay">
+            <h3>{{ post.title }}</h3>
+            <p class="news-date">{{ post.date | date: "%B %d, %Y" }}</p>
+            {% if post.author %}
+                <p class="news-date"><i>{{ post.author }}</i></p>
+            {% endif %}
+            </div>
+        </a>
+    {% endfor %}
+
+    <!-- Arrows -->
+    <a class="news-prev" onclick="plusNews(-1)">&#10094;</a>
+    <a class="news-next" onclick="plusNews(1)">&#10095;</a>
+  </div>
+
+  <!-- Dots -->
+  <div class="news-dots">
+    {% for post in recent_posts %}
+      <span class="news-dot" onclick="currentNews({{ forloop.index0 }})"></span>
+    {% endfor %}
+  </div>
+
+</section>
+
+<script>
+(function() {
+  let newsIndex = 0;
+  showNews(newsIndex);
+
+  window.plusNews = function(n) {
+    showNews(newsIndex += n);
+  }
+
+  window.currentNews = function(n) {
+    showNews(newsIndex = n);
+  }
+
+  function showNews(n) {
+    const slides = document.getElementsByClassName("newsSlide");
+    const dots = document.getElementsByClassName("news-dot");
+
+    if (slides.length === 0) return;
+
+    if (n >= slides.length) newsIndex = 0;
+    if (n < 0) newsIndex = slides.length - 1;
+
+    for (let i = 0; i < slides.length; i++)
+      slides[i].style.display = "none";
+
+    for (let i = 0; i < dots.length; i++)
+      dots[i].classList.remove("active");
+
+    slides[newsIndex].style.display = "block";
+    dots[newsIndex].classList.add("active");
+  }
+
+  // Autoplay every 6 seconds
+  setInterval(() => plusNews(1), 6000);
+})();
+</script>
