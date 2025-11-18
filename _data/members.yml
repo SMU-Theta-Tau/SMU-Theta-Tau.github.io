@@ -3,48 +3,57 @@
   number: 599
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Nikoloz Baramidze
   class: Fall '22
   number: 602
   badges: []
   nickname: ''
+  major: OREM
 - name: Blake Bence
   class: Fall '22
   number: 603
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Gavin Bounous
   class: Fall '22
   number: 604
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Austin Carnline
   class: Fall '22
   number: 605
   badges:
   - T!
   nickname: ''
+  major: Computer Science
 - name: Elijah Chesnut
   class: Fall '22
   number: 606
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Brayden Diaz
   class: Fall '22
   number: 608
   badges:
   - UU!
   nickname: ''
+  major: Computer Science
 - name: Benjamin Gravel
   class: Fall '22
   number: 611
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Sessions Hootsell
   class: Fall '22
   number: 614
   badges: []
   nickname: ''
+  major: Civil
 - name: Jackson Reed
   class: Fall '22
   number: 618
@@ -53,59 +62,70 @@
   - YY! 
   - VV!
   nickname: '"Mr. 1894"'
+  major: Electrical/Computer
 - name: Justin Vincent
   class: Fall '22
   number: 621
   badges:
   - WW!
   nickname: ''
+  major:
 - name: William Flinchbaugh
   class: Fall '23
   number: 623
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Clark Godinez
   class: Fall '23
   number: 625
   badges: []
   nickname: ''
+  major: Electrical
 - name: Isabella Iannarelli
   class: Fall '23
   number: 626
   badges:
   - VV!
   nickname: ''
+  major: Mechanical
 - name: Dominic Lewis
   class: Fall '23
   number: 627
   badges: []
   nickname: ''
+  major: Civil
 - name: Michael Llanes
   class: Fall '23
   number: 628
   badges:
   - W!
   nickname: ''
+  major: Computer Science
 - name: Erick Mainoo
   class: Fall '23
   number: 629
   badges: []
   nickname: ''
+  major: Computer Science
 - name: William Miller
   class: Fall '23
   number: 630
   badges: []
   nickname: ''
+  major: Electrical
 - name: Katie Frymire
   class: Fall '23
   number: 631
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Frances Sisk
   class: Fall '23
   number: 636
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Emma Stammeyer
   class: Fall '23
   number: 637
@@ -113,206 +133,247 @@
   - Y! 
   - RR!
   nickname: ''
+  major: OREM
 - name: Hansana Vivekanandan
   class: Fall '23
   number: 638
   badges: []
   nickname: ''
+  major: Electrical
 - name: Hayden Wilson
   class: Fall '23
   number: 640
   badges: []
   nickname: ''
+  major: Electrical/Biomed
 - name: Rachel Zuercher
   class: Fall '23
   number: 641
   badges: []
   nickname: ''
+  major: Environmental
 - name: Vaughn Androlowicz
   class: Fall '24
   number: 642
   badges:
   - Z!
   nickname: '"DOFE"'
+  major: Computer Science
 - name: Travis Beck
   class: Fall '24
   number: 643
   badges: []
   nickname: ''
+  major: Electrical
 - name: Iyanna Christie
   class: Fall '24
   number: 644
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Nicholas Cusson
   class: Fall '24
   number: 645
   badges: []
   nickname: ''
+  major: Electrical/Computer
 - name: Avery Dye
   class: Fall '24
   number: 646
   badges: []
   nickname: ''
+  major: OREM
 - name: Prince Ezeoma
   class: Fall '24
   number: 648
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Crystan Gilbert
   class: Fall '24
   number: 649
   badges: []
   nickname: ''
+  major: Electrical/Computer
 - name: Johanna Gulliksson
   class: Fall '24
   number: 650
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Aditya Goel
   class: Fall '24
   number: 651
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Seth Hoppenstein
   class: Fall '24
   number: 652
   badges: []
   nickname: ''
+  major: Electrical/Computer
 - name: Bianca Ihekwoaba
   class: Fall '24
   number: 654
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Riley Murray
   class: Fall '24
   number: 655
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Kristian Perez
   class: Fall '24
   number: 656
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Claudia Pinkerton
   class: Fall '24
   number: 657
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Owen Schwartz
   class: Fall '24
   number: 658
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Chiara Tesoriero
   class: Fall '24
   number: 659
   badges: []
   nickname: ''
+  major: Electrical
 - name: Jackson Chase
   class: Spring '25
   number: 660
   badges: []
   nickname: ''
+  major: OREM
 - name: Conrad Cramer
   class: Spring '25
   number: 661
   badges: []
   nickname: ''
+  major: Computer Science
 - name: Garhett Daves
   class: Spring '25
   number: 662
   badges:
   - U!
   nickname: ''
+  major: Environmental
 - name: Dillan DeLugo
   class: Spring '25
   number: 663
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Pierce Fisk
   class: Spring '25
   number: 664
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Carter Godinez
   class: Spring '25
   number: 665
   badges: []
   nickname: ''
+  major: Electrical
 - name: Jax Hu
   class: Spring '25
   number: 666
   badges:
   - V!
   nickname: ''
+  major: Computer Science
 - name: Rebecca Gunlaugsson
   class: Spring '25
   number: 667
   badges: []
   nickname: ''
+  major: OREM
 - name: Michael Harb
   class: Spring '25
   number: 668
   badges: []
   nickname: ''
+  major: Electrical/Computer
 - name: Palmer Hurd
   class: Spring '25
   number: 669
   badges: []
   nickname: ''
+  major: Environmental
 - name: Grayson Hydinger
   class: Spring '25
   number: 670
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Ellie Lim
   class: Spring '25
   number: 671
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Giulianno Manzi
   class: Spring '25
   number: 672
   badges: []
   nickname: ''
+  major: Mechanical
 - name: Spencer Neill
   class: Spring '25
   number: 673
   badges: []
   nickname: ''
+  major: Electrical/Computer
 - name: Aiden Pagiotas
   class: Spring '25
   number: 674
   badges: []
   nickname: ''
+  major: Electrical/Computer
 - name: Regina Ramirez
   class: Spring '25
   number: 675
   badges: []
   nickname: ''
+  major: OREM
 - name: Joshua Rivera
   class: Spring '25
   number: 676
   badges: []
   nickname: '"Money Man"'
+  major: Mechanical
 - name: Cricket Tatone
   class: Spring '25
   number: 677
   badges: []
   nickname: ''
+  major: Environmental
 - name: Conor Katsamakis
   class: Spring '25
   number: 678
   badges: []
   nickname: ''
+  major: OREM
 - name: Katie Raworth
   class: Spring '25
   number: 679
   badges: []
   nickname: ''
+  major: Electrical/Computer
 - name: Jadon Swearingen
   class: Spring '25
   number: 680
   badges: []
   nickname: ''
+  major: Computer Science
