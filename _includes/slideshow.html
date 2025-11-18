@@ -20,32 +20,50 @@
 
     <button class="prev" type="button" aria-label="Previous slide" onclick="plusSlides(-1)">&#10094;</button>
     <button class="next" type="button" aria-label="Next slide" onclick="plusSlides(1)">&#10095;</button>
+
+    <div class="slideshow-dots">
+      {% for f in photos %}
+        <span class="dot" onclick="currentSlide({{ forloop.index0 }})"></span>
+      {% endfor %}
+    </div>
+
   </div>
 </section>
 
 <script>
-  // Init after Liquid rendered slides are in the DOM
-  (function(){
-    var slides = document.getElementsByClassName("slides");
-    if (!slides.length) return;
+(function(){
+  var slides = document.getElementsByClassName("slides");
+  var dots = document.getElementsByClassName("dot");
+  if (!slides.length) return;
 
-    var slideIndex = Math.floor(Math.random() * slides.length);
-    showSlides(slideIndex);
+  var slideIndex = 0;
+  showSlides(slideIndex);
 
-    function plusSlides(n){ showSlides(slideIndex += n); }
-    window.plusSlides = plusSlides; // expose for buttons
+  function plusSlides(n){ showSlides(slideIndex += n); }
+  function currentSlide(n){ showSlides(slideIndex = n); }
 
-    function showSlides(n){
-      if (n >= slides.length) slideIndex = 0;
-      if (n < 0) slideIndex = slides.length - 1;
-      for (var i = 0; i < slides.length; i++) slides[i].style.display = "none";
-      slides[slideIndex].style.display = "block";
+  window.plusSlides = plusSlides;
+  window.currentSlide = currentSlide;
+
+  function showSlides(n){
+    if (n >= slides.length) slideIndex = 0;
+    if (n < 0) slideIndex = slides.length - 1;
+
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (var d = 0; d < dots.length; d++) {
+      dots[d].classList.remove("active");
     }
 
-    // optional: arrow keys
-    document.addEventListener("keydown", function(e){
-      if (e.key === "ArrowRight") plusSlides(1);
-      if (e.key === "ArrowLeft")  plusSlides(-1);
-    });
-  })();
+    slides[slideIndex].style.display = "block";
+    dots[slideIndex].classList.add("active");
+  }
+
+  /* arrow keys */
+  document.addEventListener("keydown", function(e){
+    if (e.key === "ArrowRight") plusSlides(1);
+    if (e.key === "ArrowLeft")  plusSlides(-1);
+  });
+})();
 </script>

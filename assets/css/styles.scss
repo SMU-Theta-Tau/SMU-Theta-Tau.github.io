@@ -26,9 +26,10 @@ $gradient10: #4895EF;
 
 // CSS variables (mapped from SCSS where relevant)
 :root {
+  --thetatau-gold: rgba(215, 158, 0, 0.78);
   --tt-darkred: #7a0000; // update to exact brand if desired (or use $thetatau-darkred)
   --tt-red: #9c0b0b;
-  --bg: $thetatau-darkred
+  --bg: #7a0000;
   --card: #9c0b0b;
   --text: $thetatau-offwhite;
   --muted: #cbd0dd;
@@ -50,14 +51,14 @@ body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1200px 800px at 100% -10%, rgba(255,255,255,0.06), transparent 60%),
-    radial-gradient(1200px 800px at 0% 110%, rgba(255,255,255,0.06), transparent 60%),
-    linear-gradient(180deg, #121317, #0b0c10 60%);
+    radial-gradient(1200px 800px at 100% -10%, #7a0000, transparent 60%),
+    radial-gradient(1200px 800px at 0% 110%, #7a0000, transparent 60%),
+    linear-gradient(180deg, #7a0000, #7a0000 60%);
   background-attachment: fixed;
 }
 
 h1, h2, h3 { letter-spacing: .3px; margin: 0 0 8px; }
-h2 { font-size: clamp(28px, 3vw, 36px); }
+h2 { font-size: clamp(28px, 3vw, 36px); color: var(--thetatau-gold)}
 p, a { margin: 5px; }
 p { font-size: 1.05rem; }
 @media (max-width: 600px) { p { font-size: 1rem; } }
@@ -77,7 +78,12 @@ p { font-size: 1.05rem; }
 
 // Optional section background accents
 #hero, #officers, #chairs {
-  background: linear-gradient(0deg, color-mix(in srgb, var(--tt-darkred) 18%, transparent), transparent 60%);
+  background: linear-gradient(
+      0deg,
+      var(--tt-darkred) 20%,
+      transparent 80%
+  );
+
 }
 
 // -----------------------------------------------------------------------------
@@ -104,9 +110,10 @@ header {
   letter-spacing: .4px;
 }
 .brand-badge {
-  width: 32px; height: 32px; border-radius: 10px;
-  background: linear-gradient(145deg, var(--tt-red), var(--tt-darkred));
-  box-shadow: inset 0 0 0 1px #ffffff26, 0 6px 18px rgba(156,11,11,.35);
+  background-image: url("/img/guntharoutlinecolor.png");
+  background-size: cover; background-position: center;
+  width: 64px; height: 64px; border-radius: 10px;
+  //box-shadow: inset 0 0 0 1px #ffffff26, 0 6px 18px rgba(156,11,11,.35);
 }
 
 .navbar { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -304,7 +311,7 @@ header {
 }
 
 .officers-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 12px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); max-width: 1160px; gap: 18px; margin-top: 12px;
 }
 
 .leader-card {
@@ -322,7 +329,7 @@ header {
 }
 
 .leader-img {
-  width: 128px; height: 128px; border-radius: 14px; object-fit: cover; display: block;
+  width: 256px; height: 256px; border-radius: 14px; object-fit: cover; display: block;
   margin: 6px auto 14px; border: 1px solid #ffffff20; background: #0c0d11;
   box-shadow: 0 10px 20px rgba(0,0,0,.35);
 }
@@ -340,31 +347,141 @@ header {
   .leader-img { width: 110px; height: 110px; border-radius: 12px; }
 }
 
+.officer-badges {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Colors */
+.badge-blue {
+  background: #1e90ff;
+  color: white;
+}
+
+.badge-gold {
+  background: #f5b400;
+  color: #3a2b00;
+}
+
+.badge-red {
+  background: #c62828;
+  color: white;
+}
+
+.badge-dark {
+  background: #222;
+  color: white;
+}
+
 // -----------------------------------------------------------------------------
 // 9) Slideshow
 // -----------------------------------------------------------------------------
-
 #slideshow {
-  background: var(--tt-darkred);
-
-  .slideshow-container { max-width: 750px; max-height: 500px; position: relative; margin: auto; }
-  .slides { display: none; }
-
-  .prev, .next {
-    cursor: pointer; position: absolute; top: 70%;
-    width: auto; margin-top: -22px; padding: 16px; color: #fff;
-    font-weight: bold; font-size: 36px; transition: 0.6s ease;
-    border-radius: 0 6px 6px 0; user-select: none;
-    &:hover { background-color: rgba(0,0,0,0.8); }
-  }
-  .prev { left: 0; }
-  .next { right: 0; border-radius: 6px 0 0 6px; }
-
-  .fade {
-    animation-name: fade; animation-duration: 1.5s; opacity: 1;
-  }
-  @keyframes fade { from { opacity: .4; } to { opacity: 1; } }
+  position: relative;
+  width: 100%;
+  height: 80vh; /* or 60vh if you want shorter */
+  min-height: 400px;
+  overflow: hidden;
+  background: #000; /* acts as fallback */
 }
+
+#slideshow .slideshow-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#slideshow .slides {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  inset: 0;
+}
+
+#slideshow .slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* THIS FIXES THE UGLY BORDERS */
+  object-position: center;
+  filter: brightness(0.9); /* optional cleanup */
+  border-radius: 0;
+}
+
+/* arrows */
+#slideshow .prev,
+#slideshow .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  background: rgba(0,0,0,0.4);
+  border-radius: 6px;
+  transition: background 0.3s;
+  z-index: 5;
+}
+
+#slideshow .prev:hover,
+#slideshow .next:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+#slideshow .prev { left: 20px; }
+#slideshow .next { right: 20px; }
+
+/* fade animation */
+#slideshow .fade {
+  animation: fade 1.4s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* dots container */
+#slideshow .slideshow-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+/* individual dots */
+#slideshow .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  display: inline-block;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transition: background 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+#slideshow .dot.active {
+  background: var(--tt-gold, #f5b400);
+  transform: scale(1.2);
+}
+
 
 // -----------------------------------------------------------------------------
 // 10) Footer
