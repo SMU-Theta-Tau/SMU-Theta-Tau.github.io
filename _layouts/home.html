@@ -1,88 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SMU Theta Tau</title>
+---
+layout: default
+---
 
-  <!-- Meta / Open Graph -->
-  <meta name="author" content="SMU Theta Tau" />
-  <meta name="description" content="SMU Theta Tau" />
-  <meta name="keywords" content="smuthetatau, Southern Methodist University, SMU, Theta Tau" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="SMU Theta Tau" />
-  <meta property="og:description" content="SMU Theta Tau" />
-  <meta property="og:url" content="https://smuthetatau.org" />
+<!-- HOMEPAGE CONTENT STARTS HERE -->
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+{% include main.html %}
+{% include aboutus.html %}
+{% include slideshow.html %}
+{% include calendar.html %}
+{% include resources.html %}
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="{{ '/img/guntharoutlinecolor.png' | relative_url }}" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Global styles -->
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
-</head>
-
-<body>
-  <!-- Site Header -->
-  <header id="header" role="banner" aria-label="Site header">
-    <div class="nav-wrap">
-      <a class="brand" href="/">
-        <span class="brand-badge" aria-hidden="true"></span>
-        Theta Tau — SMU
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-      <nav id="navbar" class="navbar" role="navigation" aria-label="Primary">
-        <a href="/" class="nav-link">About Us</a>
-        <a href="/#calendar" class="nav-link">Calendar</a>
-        <a href="/#resources" class="nav-link">Resources</a>
-        <a href="/pages/officers.html" class="nav-link">Leadership</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Page Content -->
-  <main id="main" tabindex="-1">
-    {{ content }}
-  </main>
-
-  <!-- Site Footer -->
-  <footer id="footer" role="contentinfo">
-    <div class="footer-content">
-      <p>&copy; 2025 Theta Tau Tau Beta — All Rights Reserved</p>
-    </div>
-  </footer>
-
-  <!-- Optional: tiny JS for mobile nav + particles -->
-  <script>
-    // Mobile nav toggle
-    (function(){
-      const toggle = document.querySelector('.nav-toggle');
-      const nav = document.getElementById('navbar');
-      if(!toggle || !nav) return;
-      toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        nav.classList.toggle('open', !open);
-        document.body.classList.toggle('nav-open', !open);
-      });
-    })();
-
-    // Optional: particles (uncomment if you keep particles.json and library)
-    // if (window.particlesJS) {
-    //   particlesJS.load('particles-js', '/particles.json', function(){
-    //     console.log('particles.js loaded');
-    //   });
-    // }
-  </script>
-</body>
-</html>
+<!-- HOMEPAGE CONTENT ENDS HERE -->
