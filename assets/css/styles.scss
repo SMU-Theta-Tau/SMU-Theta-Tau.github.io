@@ -151,9 +151,14 @@ header {
   border-bottom: 1px solid var(--ring);
 
   .hero-bg {
+    height: 100%;
     position: absolute; inset: 0;
     background-image: url("img/gunther-caruth.png");
-    background-size: cover; background-position: center;
+    background-size: cover;
+
+    /* SHIFT THE FOCUS RIGHT (Gunthar lives here) */
+    background-position: center 100%;
+
     transform: scale(1.02);
     filter: saturate(105%) contrast(102%);
     z-index: -2;
@@ -166,12 +171,20 @@ header {
     z-index: -1; backdrop-filter: blur(.5px);
   }
   .hero-inner {
-    max-width: var(--max); margin: 0 auto;
-    padding: clamp(48px, 6vw, 96px) 20px;
-    display: grid; align-items: end; min-height: inherit;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: clamp(36px, 2vw, 96px) 20px;
+    
+    display: grid;
+    min-height: inherit;
+
+    /* Align text to LEFT instead of center */
+    justify-items: start;
+    align-items: end;
   }
   .hero-content {
-    max-width: 780px; padding: 18px 20px;
+    padding: 2rem 3rem;
+    max-width: 660px; padding: 18px 20px;
     border-radius: var(--radius); border: 1px solid var(--ring);
     background: color-mix(in srgb, #0b0c10 60%, transparent);
     box-shadow: var(--shadow);
@@ -391,12 +404,12 @@ header {
 // 9) Slideshow
 // -----------------------------------------------------------------------------
 #slideshow {
-  position: relative;
   width: 100%;
-  height: 80vh; /* or 60vh if you want shorter */
-  min-height: 400px;
+  aspect-ratio: 16 / 9; /* Keeps perfect slideshow frame */
+  max-height: 90vh;    /* prevents giant images */
   overflow: hidden;
-  background: #000; /* acts as fallback */
+  position: relative;
+  background: #000; /* fallback */
 }
 
 #slideshow .slideshow-container {
@@ -483,6 +496,66 @@ header {
   transform: scale(1.2);
 }
 
+/* ===========================================
+   MOBILE FIXES
+   =========================================== */
+@media (max-width: 600px) {
+
+  #slideshow {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Keeps perfect slideshow frame */
+    max-height: 90vh;    /* prevents giant images */
+    overflow: hidden;
+    position: relative;
+    background: #000; /* fallback */
+  }
+
+  /* Container fits parent instead of forcing tall bounds */
+  #slideshow .slideshow-container {
+    height: 100%;
+    max-height: none;
+  }
+
+  /* Slides fill mobile height cleanly */
+  #slideshow .slides {
+    height: 100%;
+  }
+
+  #slideshow .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* PERFECT cropping */
+    object-position: center;  /* safe default */
+    display: block;
+  }
+
+  /* Smaller arrows */
+  #slideshow .prev,
+  #slideshow .next {
+    font-size: 26px;
+    padding: 10px;
+    top: 50%; /* keep centered vertically */
+    transform: translateY(-50%);
+    border-radius: 8px;
+  }
+
+  /* Move arrows inward (so they don’t cover faces) */
+  #slideshow .prev { left: 8px; }
+  #slideshow .next { right: 8px; }
+
+  /* Move dots below the slideshow */
+  #slideshow .slideshow-dots {
+    position: relative;
+    bottom: auto;
+    margin-top: 8px;
+  }
+
+  #slideshow .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+  }
+}
 
 // -----------------------------------------------------------------------------
 // 10) Footer
