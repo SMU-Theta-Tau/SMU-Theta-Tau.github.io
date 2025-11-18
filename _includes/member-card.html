@@ -1,0 +1,21 @@
+<div class="member-card">
+  <div class="member-photo">
+    <img src="{{ member.photo | default: '/img/members/placeholder.png' | relative_url }}" alt="{{ member.name }}">
+  </div>
+
+  <h3 class="member-name">{{ member.name }}</h3>
+
+  {% if member.nickname %}
+    <p class="member-nickname">{{ member.nickname }}</p>
+  {% endif %}
+
+  <p class="member-class">{{ member.class }}</p>
+
+  <div class="member-pills">
+    <span class="pill number-pill">#{{ member.number }}</span>
+
+    {% for b in member.badges %}
+      <span class="pill badge-pill">{{ b }}</span>
+    {% endfor %}
+  </div>
+</div>

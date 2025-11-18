@@ -401,6 +401,79 @@ header {
 }
 
 // -----------------------------------------------------------------------------
+// 8.5) Members
+// -----------------------------------------------------------------------------
+
+.members-grid {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.member-card {
+  background: #0b0c10cc;
+  border: 1px solid var(--ring);
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.member-photo img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.member-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.member-nickname {
+  margin: 4px 0 0;
+  color: #ccc;
+  font-style: italic;
+}
+
+.member-class {
+  margin: 6px 0 10px;
+  color: var(--muted);
+}
+
+.member-pills {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.number-pill {
+  background: #1e90ff;
+  color: white;
+}
+
+.badge-pill {
+  background: #f5b400;
+  color: #3a2b00;
+}
+
+
+// -----------------------------------------------------------------------------
 // 9) Slideshow
 // -----------------------------------------------------------------------------
 #slideshow {
