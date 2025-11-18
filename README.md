@@ -11,7 +11,8 @@ If you're an outgoing Web Admin, remember to add the new officer as a contributo
 If you have questions about the project that the previous web admin can't answer, feel free to reach out to me at (469) 859-0983.
 
 ### Project Structure
-.
+
+```
 ├── _layouts/
 │   ├── default.html      # Global layout (HTML shell, header, footer)
 │   └── home.html         # Homepage content layout
@@ -47,6 +48,7 @@ If you have questions about the project that the previous web admin can't answer
 ├── index.md              # Homepage entry point (uses layout: home)
 ├── _config.yml           # Jekyll configuration
 └── README.md             # This file
+```
 
 ### Local Development Environment
 
