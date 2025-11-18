@@ -16,9 +16,9 @@
 // -----------------------------------------------------------------------------
 
 // SCSS brand variables
-$thetatau-gold: rgba(215, 158, 0, 0.78);
+$thetatau-gold: #FFCC33;
 $thetatau-offwhite: #edeab5;
-$thetatau-darkred: #660000;
+$thetatau-darkred: #8B0000;
 
 // Gradients (optional accents)
 $gradient1: #F72585;
@@ -26,10 +26,10 @@ $gradient10: #4895EF;
 
 // CSS variables (mapped from SCSS where relevant)
 :root {
-  --thetatau-gold: rgba(215, 158, 0, 0.78);
-  --tt-darkred: #7a0000; // update to exact brand if desired (or use $thetatau-darkred)
+  --thetatau-gold: #FFCC33;
+  --tt-darkred: #8B0000; // update to exact brand if desired (or use $thetatau-darkred)
   --tt-red: #9c0b0b;
-  --bg: #7a0000;
+  --bg: #8B0000;
   --card: #9c0b0b;
   --text: $thetatau-offwhite;
   --muted: #cbd0dd;
@@ -405,7 +405,7 @@ header {
 // -----------------------------------------------------------------------------
 
 .members-grid {
-  padding: 2rem;
+  //padding: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
