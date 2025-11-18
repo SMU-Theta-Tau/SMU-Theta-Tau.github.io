@@ -52,7 +52,7 @@
   - X! 
   - YY! 
   - VV!
-  nickname: ''
+  nickname: '"Mr. 1894"'
 - name: Justin Vincent
   class: Fall '22
   number: 621
@@ -133,7 +133,7 @@
   number: 642
   badges:
   - Z!
-  nickname: DOFE
+  nickname: '"DOFE"'
 - name: Travis Beck
   class: Fall '24
   number: 643
@@ -199,7 +199,7 @@
   number: 657
   badges: []
   nickname: ''
-- name: Lena Schwartz
+- name: Owen Schwartz
   class: Fall '24
   number: 658
   badges: []
