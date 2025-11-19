@@ -104,6 +104,12 @@ The include:
 ```{% include slideshow.html %}```
 automatically builds a responsive slideshow. Be sure to update the slideshow photos every couple of months.
 
+### Blog
+
+Jekyll comes with blog post functionality built-in! All you have to do is add the content and it will automatically populate in the carousel and news page.
+
+See the existing articles for the template--just copy over the top part, change the parameters accordingly, and write the article in markdown.
+
 ### Deployment
 
 The site is deployed automatically by GitHub Pages on push.
