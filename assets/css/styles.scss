@@ -27,6 +27,7 @@ $gradient10: #4895EF;
 // CSS variables (mapped from SCSS where relevant)
 :root {
   --thetatau-gold: #FFCC33;
+  --thetatau-offwhite: #edeab5;
   --tt-darkred: #8B0000; // update to exact brand if desired (or use $thetatau-darkred)
   --tt-red: #9c0b0b;
   --bg: #8B0000;
@@ -245,7 +246,7 @@ header {
 }
 .chapter-logo {
   width: min(280px, 80%); aspect-ratio: 1 / 1; object-fit: contain; display: block;
-  margin: 6px auto 10px; border-radius: 14px; background: #0c0d11; border: 1px solid #ffffff20;
+  margin: 6px auto 10px; border-radius: 14px; background: var(--thetatau-offwhite); border: 1px solid #ffffff20;
   box-shadow: 0 10px 20px rgba(0,0,0,.35);
 }
 .logo-caption { margin: 0; color: var(--muted); font-size: 14px; }
