@@ -75,7 +75,7 @@ To run the website locally:
 
 Member Data lives in ``` _data/members.yml```. You will need to update this each semester as people are initiated and members graduate. Feel free to request photos and nicknames/titles from members. The members page is automatically populated with the data from this file.
 
-Photos (on both the member and officer pages) are loaded automatically using the pattern ``` /pages/images/<rollnumber>.jpg```. New photos must be uploaded under this format to work correctly. In order to keep the repo fairly lightweight, try to keep the images under ~500 KB. They won't be displayed very large so they don't need to be super high quality.
+Photos (on both the member and officer pages) are loaded automatically using the pattern ``` /pages/images/<rollnumber>.webp```. New photos must be uploaded under this format to work correctly. In order to keep the repo fairly lightweight, try to keep the images under ~500 KB. They won't be displayed very large so they don't need to be super high quality.
 
 ### Home Page
 
