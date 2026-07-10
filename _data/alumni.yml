@@ -1,0 +1,107 @@
+- name: Tamara Azzam
+  class: Fall '22
+  number: 599
+  badges: []
+  nickname: ''
+  major: Computer Science
+- name: Nikoloz Baramidze
+  class: Fall '22
+  number: 602
+  badges: []
+  nickname: ''
+  major: OREM
+- name: Austin Carnline
+  class: Fall '22
+  number: 605
+  badges:
+  - TT!
+  - Professional Development Chair
+  nickname: ''
+  major: Computer Science
+- name: Jackson Reed
+  class: Fall '22
+  number: 618
+  badges:
+  - XX! 
+  - YY! 
+  - VV!
+  - Regionals Chair
+  nickname: '"Mr. 1894"'
+  major: Electrical/Computer
+- name: Justin Vincent
+  class: Fall '22
+  number: 621
+  badges:
+  - WW!
+  - PNM Educator
+  nickname: ''
+  major:
+- name: William Flinchbaugh
+  class: Fall '23
+  number: 623
+  badges:
+  - Health & Safety
+  - Merch & Design Chair
+  nickname: '"Management"'
+  major: Computer Science
+- name: Clark Godinez
+  class: Fall '23
+  number: 625
+  badges: []
+  nickname: ''
+  major: Electrical/Computer
+- name: William Miller
+  class: Fall '23
+  number: 630
+  badges: []
+  nickname: ''
+  major: Electrical/Computer
+- name: Frances Sisk
+  class: Fall '23
+  number: 636
+  badges: []
+  nickname: ''
+  major: Mechanical
+- name: Iyanna Christie
+  class: Fall '24
+  number: 644
+  badges: []
+  nickname: ''
+  major: Computer Science
+- name: Chiara Tesoriero
+  class: Fall '24
+  number: 659
+  badges: []
+  nickname: ''
+  major: Electrical/Computer
+- name: Jax Hu
+  class: Spring '25
+  number: 666
+  badges:
+  - VV!
+  nickname: ''
+  major: Computer Science
+- name: Michael Harb
+  class: Spring '25
+  number: 668
+  badges: []
+  nickname: ''
+  major: Electrical/Computer
+- name: Spencer Neill
+  class: Spring '25
+  number: 673
+  badges: []
+  nickname: ''
+  major: Electrical/Computer
+- name: Aiden Pagiotas
+  class: Spring '25
+  number: 674
+  badges: []
+  nickname: ''
+  major: Electrical/Computer
+- name: Isaac Ahmed
+  class: Fall '25
+  number: 681
+  badges: []
+  nickname: ''
+  major: Computer Science

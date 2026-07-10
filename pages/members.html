@@ -12,7 +12,15 @@ title: Members
     {% endfor %}
   </div>
   </div>
-  
+</section>
 
-  
+<section id="alumni">
+  <div class="section-inner">
+    <h2>Alumni Members</h2>
+    <div class="members-grid">
+    {% for member in site.data.alumni %}
+      {% include member-card.html member=member %}
+    {% endfor %}
+    </div>
+  </div>
 </section>
