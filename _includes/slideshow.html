@@ -14,7 +14,8 @@
 
     {% for f in photos %}
       <div class="slides fade" {% unless forloop.first %}style="display:none"{% endunless %}>
-        <img src="{{ f.path | relative_url }}" alt="Chapter photo {{ forloop.index }}" style="width:100%">
+        {% assign photo_index = f.path | split: '/img/photos/photo' | last | split: '.' | first%}
+        <img src="{{ f.path | relative_url }}" alt="Chapter photo {{ photo_index }}" style="width:100%">
       </div>
     {% endfor %}
 
